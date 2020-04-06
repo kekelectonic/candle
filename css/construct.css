@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(244,128,178);
+    background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
+    
+    font-family: 'Comic Neue', cursive;
+}
+h1{
+    width: 60%;
+    margin: 1% auto;
+    text-align: center;
+}
+
+.container {
+    
+    width: 30%;
+    max-width: 1024px;
+    
+    margin: 2% auto;
+
+    background-color: white;
+    
+}
+
+/* FORM START */
+
+
+.content{
+
+    width: 100%;
+    height: 30px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.nav{
+    width: 70%;
+    border: none;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+/* COLORS */
+
+
+.red{
+    background: red;
+}
+.orange {
+    background: orange;
+}
+.yellow {
+    background: yellow;
+}
+.green {
+    background: green;
+}
+.blue {
+    background: rgb(9, 161, 231);
+}
+.darkblue {
+    background: blue;
+}
+.purple {
+    background: purple;
+}
