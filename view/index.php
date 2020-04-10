@@ -10,20 +10,21 @@
     <title>Main</title>
 </head>
 <body>
-    <?php
-    include "header.html";
-    ?>
+<header>
+    <a href="index.php"> Личный кабинет </a>
+    <a href="construct.php"> Создать свой вариант </a>
+    <a href="#"> Выйти </a>
+</header>
 
-    <div class="container">
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-        <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px" alt=""></div>
-    </div>
-
-</body>
+<div class="container">
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+</div>
+    </body>
 </html>

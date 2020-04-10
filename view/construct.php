@@ -9,14 +9,14 @@
     <title>Construct</title>
 </head>
 <body>
-    <?php
-    include "header.html"
-    ?>
+<header>
+    <a href="index.php"> Выбрать из каталога </a>
+    <a href="construct.php"> Создать свой вариант </a>
+</header>
     <h1>Создайте свечу </h1>
     
 <div class="container">    
         <div class="content">
-           
         <p> Выберите цвет </p>
                 <select class="nav" name="select_color"> 
                         <option class="red" value="red" selected ></option> 
@@ -29,7 +29,7 @@
                 </select>
         </div>
 
-        <div class="content">
+        <div class="content" >
            
             <p> Выберите запах </p>
                     <select class="nav" name="select_smell"> 
@@ -41,8 +41,10 @@
                             <option value="5">gspd </option>
                             <option value="6"> Pugacheva</option>
                     </select>
-            </div>
+
 </div>
+
+
 
 </body>
 </html>
