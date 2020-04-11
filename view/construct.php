@@ -12,26 +12,27 @@
 <header>
     <a href="index.php"> Выбрать из каталога </a>
     <a href="construct.php"> Создать свой вариант </a>
+    <a href="#"> Выйти </a>
 </header>
     <h1>Создайте свечу </h1>
     
 <div class="container">    
         <div class="content">
-        <p> Выберите цвет </p>
+        <p> Выберите цвет:</p>
                 <select class="nav" name="select_color"> 
-                        <option class="red" value="red" selected ></option> 
-                        <option class="orange" value="orange"></option>
-                        <option class="yellow" value="yellow"></option>
-                        <option class="green" value="green"></option>
-                        <option class="blue" value="blue"></option>
-                        <option class="darkblue" value="darkblue"></option>
-                        <option class="purple" value="purple"></option>
+                        <option class="red" value="red" selected >Красный</option> 
+                        <option class="orange" value="orange">Оранжевый</option>
+                        <option class="yellow" value="yellow">Желтый</option>
+                        <option class="green" value="green">Зеленый</option>
+                        <option class="blue" value="blue">Голубой</option>
+                        <option class="darkblue" value="darkblue">Синий</option>
+                        <option class="purple" value="purple">Фиолетовый </option>
                 </select>
         </div>
 
-        <div class="content" >
+        <div class="content">
            
-            <p> Выберите запах </p>
+            <p> Выберите запах:</p>
                     <select class="nav" name="select_smell"> 
                             <option value="1">channel №5</option> 
                             <option value="2">trash</option>
@@ -41,6 +42,31 @@
                             <option value="5">gspd </option>
                             <option value="6"> Pugacheva</option>
                     </select>
+        </div>  
+
+        <div class="content">
+            <p> Выберите форму:</p>
+                    <select class="nav" name="select_form"> 
+                            <option value="1">Цилиндрическая</option> 
+                            <option value="2">Прямоугольная</option>
+                            <option value="3">Звёздочка</option>
+                    </select>
+        </div>
+        
+        <div class="content" >
+           
+            <p> Выберите размер:</p>
+                    <select class="nav" name="select_size"> 
+                            <option value="1">5x5см</option> 
+                            <option value="2">10х10см</option>
+                            <option value="3">15х15см</option>
+                    </select>
+        </div> 
+        <div class="content" >
+           <p> Количество:</p>
+                <input type="number" min="1">
+        </div>   
+        
 
 </div>
 
