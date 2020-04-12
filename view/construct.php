@@ -62,10 +62,11 @@
                             <option value="3">15х15см</option>
                     </select>
         </div> 
-        <div class="content" >
+        <form class="content qAndS" >
            <p> Количество:</p>
-                <input type="number" min="1">
-        </div>   
+                <input type="number" min="1" class="quantity">
+                <button type="submit" class="sbmt"> Добавить в корзину </button>
+        </form>   
         
 
 </div>
