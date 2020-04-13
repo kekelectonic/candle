@@ -17,14 +17,46 @@
 </header>
 
 <div class="container">
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
-  <div class="pic"><img src="../img/candle.jpg" width="200px" height="200px"></div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+    <div class="pic">
+        <p class="descP"> ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ ОПИСАНИЕ СВЕЧИ
+            <button type="submit" class="sbmt"> <img src="../img/cart.png" width="50px" height="50px"> </button></p>
+    </div>
+
+  
+  
+  
 </div>
     </body>
 </html>
