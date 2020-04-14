@@ -124,25 +124,56 @@ header a:hover {
     justify-content: center;
     text-align: center;
     opacity: 0;
-    color: white;
-    transition: .3s linear;
+    color: white; 
+    position: relative;
 }
+
 .pic:hover p{
     opacity: 1;
 }
+
+.pic:hover p a
+{
+    opacity: 1;
+}
+
 .pic:hover::before {
     background-color: rgba(0, 0, 0, 0.7 );
 }
+
 .pic * {
     position: relative;
     z-index: 3;
 }
 
+.sbmt {
+    opacity: 0;
+    margin: 0 auto;
+}
+    
+
 /* CONTAINER END */
 
 /* BUTTON STYLE */
 
-button {
+
+.sbmt{
+    height: 50px;
+    width: 50px;
+
+    margin-top: 10%;
+
+    background-color: transparent ;
+    background-size: contain;
+    background-image: url("../img/cart.png");
+
+    filter: invert(1);
+
+    border: none;
+    outline: none;
+}
+
+/* .sbmt {
     
     margin-top: 10%;
     padding: 0;
@@ -153,5 +184,5 @@ button {
     cursor: pointer;
     filter: invert(1);
 
-  }
+  } */
 
