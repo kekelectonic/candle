@@ -20,9 +20,9 @@ require_once "../back/connection.php";
     <a href="construct.php"> Создать свой вариант </a>
     <a href="#"> Выйти </a>
 </header>
-
+<div id="news"><h3></h3></div>  
 <div class="container">
-    
+  
     <?php
         $query = "SELECT `id_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle` FROM `candles`";                        
         $result = mysqli_query($link, $query);
@@ -42,7 +42,9 @@ require_once "../back/connection.php";
                     echo "<br>";
                     echo "Цена: " . $row_data['price_candle'];
 
-            echo "<form method='GET' action='../back/add_too_cart.php'>";
+            echo "<form method='GET' action='../back/add_to_cart.php'>";
+            echo "<input type='hidden' name='id_candle' value='".$row_data['id_candle']."'>";
+
                 echo "<button type='submit' class='sbmt' id='".$row_data["id_candle"]."'> <img src='../img/cart.png' width='50px' height='50px'>";
                 echo "</button>";
             echo "</form>";
