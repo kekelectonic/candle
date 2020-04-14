@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 11 2020 г., 19:46
+-- Время создания: Апр 14 2020 г., 12:22
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -34,17 +34,18 @@ CREATE TABLE `candles` (
   `form_candle` varchar(30) NOT NULL,
   `smell_candle` varchar(30) NOT NULL,
   `size_candle` varchar(30) NOT NULL,
-  `price_candle` int(5) NOT NULL
+  `price_candle` int(5) NOT NULL,
+  `img_candle` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `candles`
 --
 
-INSERT INTO `candles` (`id_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`) VALUES
-(1, 'фиолетовый', 'цилиндр', 'лаванда', 'маленький', 150),
-(2, 'красный', 'динамит', 'помойка', 'средний', 600),
-(3, 'желтый', 'круглый', 'лимон', 'большой', 1000);
+INSERT INTO `candles` (`id_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle`) VALUES
+(1, 'фиолетовый', 'цилиндр', 'лаванда', 'маленький', 150, '../img/cart.png'),
+(2, 'красный', 'динамит', 'помойка', 'средний', 600, '../img/cart.png'),
+(3, 'желтый', 'круглый', 'лимон', 'большой', 1000, '');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,6 @@ INSERT INTO `candles` (`id_candle`, `color_candle`, `form_candle`, `smell_candle
 CREATE TABLE `candle_order` (
   `id_candle` int(11) NOT NULL,
   `quantity` int(5) NOT NULL,
-  `cost_candle` int(5) NOT NULL,
   `id_order` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `date` datetime NOT NULL
@@ -65,11 +65,20 @@ CREATE TABLE `candle_order` (
 -- Дамп данных таблицы `candle_order`
 --
 
-INSERT INTO `candle_order` (`id_candle`, `quantity`, `cost_candle`, `id_order`, `id_user`, `date`) VALUES
-(1, 2, 300, 1, 1, '2020-04-11 00:00:00'),
-(2, 3, 1200, 2, 1, '2020-04-11 00:00:00'),
-(3, 3, 3000, 3, 2, '2020-04-11 16:16:11'),
-(3, 1, 20, 4, 1, '2020-04-11 16:16:11');
+INSERT INTO `candle_order` (`id_candle`, `quantity`, `id_order`, `id_user`, `date`) VALUES
+(1, 2, 1, 1, '2020-04-11 00:00:00'),
+(2, 3, 2, 1, '2020-04-11 00:00:00'),
+(3, 3, 3, 2, '2020-04-11 16:16:11'),
+(3, 1, 4, 1, '2020-04-11 16:16:11'),
+(1, 1, 5, 1, '2020-04-03 00:00:00'),
+(2, 1, 6, 2, '2020-04-09 00:00:00'),
+(2, 1, 7, 2, '2020-04-14 12:02:57'),
+(3, 1, 8, 1, '2020-04-14 12:05:19'),
+(2, 1, 9, 1, '2020-04-14 12:05:45'),
+(2, 1, 10, 1, '2020-04-14 12:05:46'),
+(1, 1, 11, 1, '2020-04-14 12:08:52'),
+(2, 1, 12, 1, '2020-04-14 12:08:54'),
+(3, 1, 13, 1, '2020-04-14 12:08:55');
 
 -- --------------------------------------------------------
 
@@ -79,9 +88,9 @@ INSERT INTO `candle_order` (`id_candle`, `quantity`, `cost_candle`, `id_order`, 
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `fio` varchar(255) NOT NULL,
+  `fio` varchar(100) NOT NULL,
   `phone` varchar(12) NOT NULL,
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -131,7 +140,7 @@ ALTER TABLE `candles`
 -- AUTO_INCREMENT для таблицы `candle_order`
 --
 ALTER TABLE `candle_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
