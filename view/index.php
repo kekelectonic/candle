@@ -10,7 +10,7 @@ require_once "../back/connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
-    <title>Main</title>
+    <title>Каталог</title>
 </head>
 <body>
 <header>

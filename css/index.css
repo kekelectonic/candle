@@ -154,8 +154,7 @@ header a:hover {
 
 /* CONTAINER END */
 
-/* BUTTON STYLE */
-
+/* CART STYLE*/
 
 .sbmt{
     height: 50px;
@@ -173,16 +172,5 @@ header a:hover {
     outline: none;
 }
 
-/* .sbmt {
-    
-    margin-top: 10%;
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
-    filter: invert(1);
 
-  } */
 
