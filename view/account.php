@@ -20,6 +20,16 @@ if (empty($_SESSION['username'])) {
     <?php
         echo $_SESSION['id_user'];
         echo $_SESSION['username'];
+        $id_user = $_SESSION['id_user'];
+
+        $query = "SELECT `id_user`, `login`, `fio`, `phone`, `address` FROM `users` WHERE `id_user` = '$id_user'";
+        $result = mysqli_query($link, $query);
+        $data = mysqli_fetch_assoc($result);
+        $login_data = $data['login'];
+        $fio_data = $data['fio'];
+        $phone_data = $data['phone'];
+        $address_data = $data['address'];
+
     ?>    
 <!--     <form method="GET" action="../back/logout.php">
         <input type="submit" name="exit-button" value="Выход" id="backbtn">
@@ -32,10 +42,10 @@ if (empty($_SESSION['username'])) {
     
 <div class="container">    
         <div class="content">
-            <p>Имя</p>
-            <p>Емайл Логин</p>
-            <p>Телефон</p>
-            <p>Адрес</p>
+            <p>Имя: <? echo $fio_data;?></p>
+            <p>Логин: <? echo $login_data;?></p>
+            <p>Телефон: <? echo $phone_data;?></p>
+            <p>Адрес: <? echo $address_data;?></p>
         </div>
         <div class="content">
             <a href="order.php">История заказов</a>

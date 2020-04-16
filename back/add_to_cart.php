@@ -3,7 +3,7 @@ session_start();
 require_once "../back/connection.php";
 
 	$id_candle = $_GET['candleID'];
-	$id_user = 2;
+	$id_user = $_SESSION['id_user'];
 
 	$query = "INSERT INTO `candle_order`
 	(`id_candle`, `quantity`, `id_order`, `id_user`, `date`)
