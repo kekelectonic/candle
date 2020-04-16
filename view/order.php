@@ -21,9 +21,7 @@ if (empty($_SESSION['username'])) {
         echo $_SESSION['id_user'];
         echo $_SESSION['username'];
     ?>
-<!--     <form method="GET" action="../back/logout.php">
-        <input type="submit" name="exit-button" value="Выход" id="backbtn">
-    </form>  --> 
+
 <header>
     <a href="account.php"> Личный кабинет </a>
     <a href="catalogue.php"> Каталог </a>

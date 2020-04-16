@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2020 г., 14:11
+-- Время создания: Апр 16 2020 г., 18:54
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -54,22 +54,22 @@ INSERT INTO `candles` (`id_candle`, `color_candle`, `form_candle`, `smell_candle
 --
 
 CREATE TABLE `candle_order` (
+  `id_orders` int(11) NOT NULL,
   `id_candle` int(11) NOT NULL,
   `quantity` int(5) NOT NULL,
-  `id_order` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `date` datetime NOT NULL
+  `date` datetime NOT NULL,
+  `id_order_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `candle_order`
 --
 
-INSERT INTO `candle_order` (`id_candle`, `quantity`, `id_order`, `id_user`, `date`) VALUES
-(1, 1, 2, 3, '2020-04-16 13:56:05'),
-(1, 1, 3, 3, '2020-04-16 13:56:12'),
-(2, 1, 4, 3, '2020-04-16 13:56:14'),
-(3, 1, 5, 3, '2020-04-16 13:56:14');
+INSERT INTO `candle_order` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`) VALUES
+(1, 1, 5, 4, '2020-04-16 18:42:08', 17),
+(2, 2, 4, 4, '2020-04-16 18:42:48', 17),
+(3, 3, 3, 4, '2020-04-16 18:42:51', 17);
 
 -- --------------------------------------------------------
 
@@ -83,15 +83,17 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `fio` varchar(100) NOT NULL,
   `phone` varchar(12) NOT NULL,
-  `address` text NOT NULL
+  `address` text NOT NULL,
+  `session_order` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`) VALUES
-(3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок');
+INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
+(3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 17);
 
 --
 -- Индексы сохранённых таблиц
@@ -107,9 +109,10 @@ ALTER TABLE `candles`
 -- Индексы таблицы `candle_order`
 --
 ALTER TABLE `candle_order`
-  ADD PRIMARY KEY (`id_order`),
+  ADD PRIMARY KEY (`id_orders`),
   ADD KEY `id_candle` (`id_candle`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_order_user` (`id_order_user`);
 
 --
 -- Индексы таблицы `users`
@@ -130,12 +133,12 @@ ALTER TABLE `candles`
 -- AUTO_INCREMENT для таблицы `candle_order`
 --
 ALTER TABLE `candle_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

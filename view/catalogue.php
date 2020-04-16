@@ -25,9 +25,7 @@ if (empty($_SESSION['username'])) {
     <title>Каталог</title>
 </head>
 <body>
-<!--     <form method="GET" action="../back/logout.php">
-        <input type="submit" name="exit-button" value="Выход" id="backbtn">
-    </form>  --> 
+
 <header>
     <a href="account.php"> Личный кабинет </a>
     <a href="construct.php"> Создать свой вариант </a>
@@ -43,7 +41,7 @@ if (empty($_SESSION['username'])) {
         $row = mysqli_num_rows($result);
 
         while ($row_data = mysqli_fetch_assoc($result)) {
-            // echo ;
+            
             ?>
             <div class='pic'>
                 <p class='descP'>
@@ -57,25 +55,6 @@ if (empty($_SESSION['username'])) {
                 </p>
             </div>
             <?
-
-            // echo "<div class='pic'>";
-            //     echo "<p class='descP'>";
-            //         echo "Цвет: " . $row_data['color_candle'];
-            //         echo "<br>";
-            //         echo "Форма: " . $row_data['form_candle'];
-            //         echo "<br>";
-            //         echo "Запах: " . $row_data['smell_candle'];
-            //         echo "<br>";
-            //         echo "Размер: " . $row_data['size_candle'];
-            //         echo "<br>";
-            //         echo "Цена: " . $row_data['price_candle'];
-
-            // echo "<form id='add_cart' method='GET' action='../back/add_to_cart.php?".$row_data['id_candle']."'>";
-            
-            //     echo "<input type='submit' class='sbmt' name='add' value='' id='".$row_data["id_candle"]."'>";
-            // echo "</form>";
-            //     echo "</p>";
-            // echo "</div>";
         }
             ?>
   

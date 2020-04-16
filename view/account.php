@@ -18,8 +18,6 @@ if (empty($_SESSION['username'])) {
 </head>
 <body>
     <?php
-        echo $_SESSION['id_user'];
-        echo $_SESSION['username'];
         $id_user = $_SESSION['id_user'];
 
         $query = "SELECT `id_user`, `login`, `fio`, `phone`, `address` FROM `users` WHERE `id_user` = '$id_user'";
@@ -31,9 +29,7 @@ if (empty($_SESSION['username'])) {
         $address_data = $data['address'];
 
     ?>    
-<!--     <form method="GET" action="../back/logout.php">
-        <input type="submit" name="exit-button" value="Выход" id="backbtn">
-    </form>  -->
+
     <header>
         <a href="catalogue.php"> Выбрать из каталога </a>
         <a href="construct.php"> Создать свой вариант </a>

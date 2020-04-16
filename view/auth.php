@@ -11,12 +11,42 @@ if (isset($_POST['auth-button'])) {
   $query = "SELECT `login`, `password`  FROM `users`";
   $result = mysqli_query($link, $query);
 
+
+
+
   while ($row = mysqli_fetch_row($result)) {
     $passVer = password_verify($password, $row[1]);
     if (($login == $row[0]) and $passVer) 
     {
       session_start();
       $_SESSION['username'] = $row[0];
+
+        $SESSIONname = $_SESSION['username'];
+        $query_id = "SELECT id_user FROM users WHERE login = '$SESSIONname'";
+        $result_id = mysqli_query($link, $query_id);
+        $id_data = mysqli_fetch_row($result_id);
+        $id_user = $id_data[0];
+        $_SESSION['id_user'] = $id_user;
+        $id_user = $_SESSION['id_user'];
+        
+//////////////////////////////////////////////////////////////////
+//ОЧЕНЬ СЛОЖНАЯ ШТУКА ДАЖЕ НЕ ПЫТАЙТЕСЬ ПОНЯТЬ ЗАЧЕМ//////////////////////////////////////////
+        $query_session = "SELECT `session_order` FROM `users` WHERE `id_user` = $id_user;";
+        $result_session = mysqli_query($link, $query_session);
+        $session_data = mysqli_fetch_row($result_session);
+        $session = $session_data[0];
+        $session++;
+
+        $query_update_session = "UPDATE `users` SET `session_order` = $session WHERE `id_user` = $id_user;";
+        $result_update_session = mysqli_query($link, $query_update_session);
+
+
+        $query_session2 = "SELECT `session_order` FROM `users` WHERE `id_user` = $id_user;";
+        $result_session2 = mysqli_query($link, $query_session2);
+        $session_data2 = mysqli_fetch_row($result_session2);
+        $session = $session_update[0];
+        $_SESSION['session'] = $session;
+////////////////////////////////////////////////////////////////////////////////////////////////////////
       header('Location: catalogue.php');
     }
 
