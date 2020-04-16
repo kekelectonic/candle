@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once "../back/connection.php";
+
+if (empty($_SESSION['username'])) {
+    header('Location: auth.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +17,10 @@
     <title>Конструктор</title>
 </head>
 <body>
+    <?php
+        echo $_SESSION['id_user'];
+        echo $_SESSION['username'];
+    ?>
 <!--     <form method="GET" action="../back/logout.php">
         <input type="submit" name="exit-button" value="Выход" id="backbtn">
     </form>  -->    

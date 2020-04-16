@@ -11,7 +11,10 @@ if (empty($_SESSION['username'])) {
         $query_id = "SELECT id_user FROM users WHERE login = '$SESSIONname'";
         $result_id = mysqli_query($link, $query_id);
         $id_data = mysqli_fetch_row($result_id);
-        $id_user = $id_data[0];  
+        $id_user = $id_data[0];
+        $_SESSION['id_user'] = $id_user;
+        echo $_SESSION['id_user'];
+        echo $SESSIONname;
 ?>
 
 <!DOCTYPE html>
