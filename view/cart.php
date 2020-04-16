@@ -57,8 +57,8 @@ $id_user = $_SESSION['id_user'];
             ?>
             <p>Всего: <?= $cost;?></p>  
     </div>
-        <form method="GET" action="">
-        <input type="submit" name="to-order" value="Заказать" id="to-order">
+        <form method="GET" action="../back/add_to_order.php">
+        <input type="submit" name="add-to-order" value="Заказать" id="add-to-order">
     </form>     
 
 </div>
