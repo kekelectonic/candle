@@ -20,6 +20,7 @@ if (empty($_SESSION['username'])) {
    
 <header>
     <a href="account.php"> Личный кабинет </a>
+    <a href="cart.php"> Корзина </a>
     <a href="catalogue.php"> Каталог </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>

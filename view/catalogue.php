@@ -28,6 +28,7 @@ if (empty($_SESSION['username'])) {
 
 <header>
     <a href="account.php"> Личный кабинет </a>
+    <a href="cart.php"> Корзина </a>
     <a href="construct.php"> Создать свой вариант </a>
     <a href="../back/logout.php"> Выйти </a>
 
@@ -36,7 +37,7 @@ if (empty($_SESSION['username'])) {
 <div class="container">
   
     <?php
-        $query = "SELECT `id_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle` FROM `candles`";                        
+        $query = "SELECT `id_candle`, `name_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle` FROM `candles`";                        
         $result = mysqli_query($link, $query);
         $row = mysqli_num_rows($result);
 
@@ -45,6 +46,7 @@ if (empty($_SESSION['username'])) {
             ?>
             <div class='pic'>
                 <p class='descP'>
+                    <span><? echo $row_data['name_candle'];?></span>
                     Цвет: <? echo $row_data['color_candle'];?> <br>
                     Форма: <? echo $row_data['form_candle'];?> <br>
                     Запах: <? echo  $row_data['smell_candle']; ?> <br>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2020 г., 18:54
+-- Время создания: Апр 16 2020 г., 19:58
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `candles` (
   `id_candle` int(11) NOT NULL,
+  `name_candle` varchar(20) NOT NULL,
   `color_candle` varchar(30) NOT NULL,
   `form_candle` varchar(30) NOT NULL,
   `smell_candle` varchar(30) NOT NULL,
@@ -42,18 +43,18 @@ CREATE TABLE `candles` (
 -- Дамп данных таблицы `candles`
 --
 
-INSERT INTO `candles` (`id_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle`) VALUES
-(1, 'фиолетовый', 'цилиндр', 'лаванда', 'маленький', 150, '../img/cart.png'),
-(2, 'красный', 'динамит', 'помойка', 'средний', 600, '../img/cart.png'),
-(3, 'желтый', 'круглый', 'лимон', 'большой', 1000, '');
+INSERT INTO `candles` (`id_candle`, `name_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle`) VALUES
+(1, 'Лаванда Ф', 'фиолетовый', 'цилиндр', 'лаванда', 'маленький', 150, '../img/cart.png'),
+(2, 'Помойка К', 'красный', 'динамит', 'помойка', 'средний', 600, '../img/cart.png'),
+(3, 'Лимон ж', 'желтый', 'круглый', 'лимон', 'большой', 1000, '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `candle_order`
+-- Структура таблицы `cart`
 --
 
-CREATE TABLE `candle_order` (
+CREATE TABLE `cart` (
   `id_orders` int(11) NOT NULL,
   `id_candle` int(11) NOT NULL,
   `quantity` int(5) NOT NULL,
@@ -63,10 +64,10 @@ CREATE TABLE `candle_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `candle_order`
+-- Дамп данных таблицы `cart`
 --
 
-INSERT INTO `candle_order` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`) VALUES
+INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`) VALUES
 (1, 1, 5, 4, '2020-04-16 18:42:08', 17),
 (2, 2, 4, 4, '2020-04-16 18:42:48', 17),
 (3, 3, 3, 4, '2020-04-16 18:42:51', 17);
@@ -106,9 +107,9 @@ ALTER TABLE `candles`
   ADD PRIMARY KEY (`id_candle`);
 
 --
--- Индексы таблицы `candle_order`
+-- Индексы таблицы `cart`
 --
-ALTER TABLE `candle_order`
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_orders`),
   ADD KEY `id_candle` (`id_candle`),
   ADD KEY `id_user` (`id_user`),
@@ -130,9 +131,9 @@ ALTER TABLE `users`
 ALTER TABLE `candles`
   MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT для таблицы `candle_order`
+-- AUTO_INCREMENT для таблицы `cart`
 --
-ALTER TABLE `candle_order`
+ALTER TABLE `cart`
   MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `users`
@@ -144,11 +145,11 @@ ALTER TABLE `users`
 --
 
 --
--- Ограничения внешнего ключа таблицы `candle_order`
+-- Ограничения внешнего ключа таблицы `cart`
 --
-ALTER TABLE `candle_order`
-  ADD CONSTRAINT `candle_order_ibfk_1` FOREIGN KEY (`id_candle`) REFERENCES `candles` (`id_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `candle_order_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_candle`) REFERENCES `candles` (`id_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

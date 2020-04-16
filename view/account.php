@@ -32,6 +32,7 @@ if (empty($_SESSION['username'])) {
 
     <header>
         <a href="catalogue.php"> Выбрать из каталога </a>
+        <a href="cart.php"> Корзина </a>
         <a href="construct.php"> Создать свой вариант </a>
         <a href="../back/logout.php"> Выйти </a>
     </header>

@@ -17,13 +17,10 @@ if (empty($_SESSION['username'])) {
     <title>Информация о заказах</title>
 </head>
 <body>
-        <?php
-        echo $_SESSION['id_user'];
-        echo $_SESSION['username'];
-    ?>
 
 <header>
     <a href="account.php"> Личный кабинет </a>
+    <a href="cart.php"> Корзина </a>
     <a href="catalogue.php"> Каталог </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
