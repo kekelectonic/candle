@@ -8,11 +8,13 @@
     <link rel="stylesheet" href ="../css/account.css">
 </head>
 <body>
-
+<!--     <form method="GET" action="../back/logout.php">
+        <input type="submit" name="exit-button" value="Выход" id="backbtn">
+    </form>  -->
     <header>
-        <a href="index.php"> Выбрать из каталога </a>
+        <a href="catalogue.php"> Выбрать из каталога </a>
         <a href="construct.php"> Создать свой вариант </a>
-        <a href="#"> Выйти </a>
+        <a href="../back/logout.php"> Выйти </a>
     </header>
     
 <div class="container">    

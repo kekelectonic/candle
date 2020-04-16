@@ -5,6 +5,9 @@ if (isset($_POST['reg-button'])) {
     $login = $_POST['reg-login'];
     $password = $_POST['reg-pass'];
     $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+    $fio =  $_POST['fio'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
 
     $button = $_POST['reg-button'];
 
@@ -14,7 +17,7 @@ if (isset($_POST['reg-button'])) {
 
     if ($row == 0) 
     {
-        $query_reg = "INSERT INTO `users` (`id_user`, `login`, `password`, `username`) VALUES (NULL, '$login', '$passwordhash');";
+        $query_reg = "INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`) VALUES (NULL, '$login', '$passwordhash', '$fio', '$phone', '$address');";
         $send = mysqli_query($link, $query_reg);
     }
     else{
@@ -51,7 +54,11 @@ if (isset($_POST['reg-button'])) {
         <form id="reg" method="POST">
             <p><input type="text" name="reg-login" required autofocus placeholder="Логин..."></p>
             <p><input type="password" name="reg-pass" required="" placeholder="Пароль..."></p>
-            <p><input type="submit" name="reg-button" value="Зарегистрироваться" id="book_add"></p>
+            <p><input type="text" name="fio" required="" placeholder="ФИО..."></p>
+            <p><input type="text" name="phone" required="" placeholder="Телефон..."></p>
+            <p><input type="text" name="address" required="" placeholder="Адрес..."></p>
+
+            <p><input type="submit" name="reg-button" value="Зарегистрироваться"></p>
             
             <p><a href="../index.php"> <span>У меня уже есть аккаунт</a></p>
         </form>

@@ -1,6 +1,17 @@
 <?php
 session_start();
 require_once "../back/connection.php";
+
+if (empty($_SESSION['username'])) {
+    header('Location: auth.php');
+    exit();
+}
+
+        $SESSIONname = $_SESSION['username'];
+        $query_id = "SELECT id_user FROM users WHERE login = '$SESSIONname'";
+        $result_id = mysqli_query($link, $query_id);
+        $id_data = mysqli_fetch_row($result_id);
+        $id_user = $id_data[0];  
 ?>
 
 <!DOCTYPE html>
@@ -9,14 +20,19 @@ require_once "../back/connection.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/catalogue.css">
     <title>Каталог</title>
 </head>
 <body>
+<!--     <form method="GET" action="../back/logout.php">
+        <input type="submit" name="exit-button" value="Выход" id="backbtn">
+    </form>  --> 
 <header>
     <a href="account.php"> Личный кабинет </a>
     <a href="construct.php"> Создать свой вариант </a>
-    <a href="#"> Выйти </a>
+    <a href="../back/logout.php"> Выйти </a>
+
+
 </header> 
 <div class="container">
   

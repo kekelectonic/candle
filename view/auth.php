@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once '../back/connection.php';
 
 if (isset($_POST['auth-button'])) {
@@ -17,7 +17,7 @@ if (isset($_POST['auth-button'])) {
     {
       session_start();
       $_SESSION['username'] = $row[0];
-      header('Location: library.php');
+      header('Location: catalogue.php');
     }
 
   }
@@ -47,7 +47,7 @@ if (isset($_POST['auth-button'])) {
       <form class="login-form" method="POST">
         <p><input type="text" name="auth-login" required placeholder="Ваш логин..."/></p>
         <p><input type="password" name="auth-pass" required placeholder="Ваш пароль..."/></p>
-        <p><input type="submit" name="auth-button" required value="ВОЙТИ" id="book_add"></p>
+        <p><input type="submit" name="auth-button" required value="ВОЙТИ"></p>
         <p class="reg"><a href="register.php">Регистрация</a> </p>
       </form>
     </div>

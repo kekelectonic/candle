@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 14 2020 г., 12:22
+-- Время создания: Апр 16 2020 г., 13:37
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -61,25 +61,6 @@ CREATE TABLE `candle_order` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `candle_order`
---
-
-INSERT INTO `candle_order` (`id_candle`, `quantity`, `id_order`, `id_user`, `date`) VALUES
-(1, 2, 1, 1, '2020-04-11 00:00:00'),
-(2, 3, 2, 1, '2020-04-11 00:00:00'),
-(3, 3, 3, 2, '2020-04-11 16:16:11'),
-(3, 1, 4, 1, '2020-04-11 16:16:11'),
-(1, 1, 5, 1, '2020-04-03 00:00:00'),
-(2, 1, 6, 2, '2020-04-09 00:00:00'),
-(2, 1, 7, 2, '2020-04-14 12:02:57'),
-(3, 1, 8, 1, '2020-04-14 12:05:19'),
-(2, 1, 9, 1, '2020-04-14 12:05:45'),
-(2, 1, 10, 1, '2020-04-14 12:05:46'),
-(1, 1, 11, 1, '2020-04-14 12:08:52'),
-(2, 1, 12, 1, '2020-04-14 12:08:54'),
-(3, 1, 13, 1, '2020-04-14 12:08:55');
-
 -- --------------------------------------------------------
 
 --
@@ -88,7 +69,7 @@ INSERT INTO `candle_order` (`id_candle`, `quantity`, `id_order`, `id_user`, `dat
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `login` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
   `fio` varchar(100) NOT NULL,
   `phone` varchar(12) NOT NULL,
@@ -99,9 +80,8 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id_user`, `email`, `password`, `fio`, `phone`, `address`) VALUES
-(1, 'dwdwdw', 'dwdwd', 'dwdwd', 'dwdw', 'dwd'),
-(2, 'mik@mail.ru', 'daddy)))', 'zbp', '88005553535', 'Мой адрес не дом и не улица, мой адрес - бахча');
+INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`) VALUES
+(3, 'admin', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'admin', 'admin', 'admin');
 
 --
 -- Индексы сохранённых таблиц
@@ -140,12 +120,12 @@ ALTER TABLE `candles`
 -- AUTO_INCREMENT для таблицы `candle_order`
 --
 ALTER TABLE `candle_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

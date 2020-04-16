@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 if (empty($_SESSION['username'])) 
 {
@@ -9,6 +9,6 @@ if (empty($_SESSION['username']))
 
 else 
 {
-    header('Location: ../index.php/library.php');
+    header('Location: ../view/catalogue.php');
     exit();
 }

@@ -11,5 +11,5 @@ require_once "../back/connection.php";
 	
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
 	mysqli_close($link);
-	header('Location: ../view/index.php');
+	header('Location: ../view/catalogue.php');
 ?>
