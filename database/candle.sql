@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2020 г., 13:37
+-- Время создания: Апр 16 2020 г., 14:11
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -61,6 +61,16 @@ CREATE TABLE `candle_order` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `candle_order`
+--
+
+INSERT INTO `candle_order` (`id_candle`, `quantity`, `id_order`, `id_user`, `date`) VALUES
+(1, 1, 2, 3, '2020-04-16 13:56:05'),
+(1, 1, 3, 3, '2020-04-16 13:56:12'),
+(2, 1, 4, 3, '2020-04-16 13:56:14'),
+(3, 1, 5, 3, '2020-04-16 13:56:14');
+
 -- --------------------------------------------------------
 
 --
@@ -81,7 +91,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`) VALUES
-(3, 'admin', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'admin', 'admin', 'admin');
+(3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок');
 
 --
 -- Индексы сохранённых таблиц
@@ -120,7 +130,7 @@ ALTER TABLE `candles`
 -- AUTO_INCREMENT для таблицы `candle_order`
 --
 ALTER TABLE `candle_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
