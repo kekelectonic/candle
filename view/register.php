@@ -17,7 +17,7 @@ if (isset($_POST['reg-button'])) {
 
     if ($row == 0) 
     {
-        $query_reg = "INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`) VALUES (NULL, '$login', '$passwordhash', '$fio', '$phone', '$address');";
+        $query_reg = "INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES (NULL, '$login', '$passwordhash', '$fio', '$phone', '$address', 1);";
         $send = mysqli_query($link, $query_reg);
     }
     else{
