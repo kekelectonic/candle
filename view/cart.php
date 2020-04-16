@@ -44,6 +44,10 @@ $id_user = $_SESSION['id_user'];
         $query_orders = "SELECT name_candle, quantity, price_candle * quantity FROM cart, candles WHERE id_order_user = $id_order_user AND id_user = $id_user AND cart.id_candle = candles.id_candle;"; 
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
+        if($row <= 0){
+            echo "В корзине пока нет товаров";
+        }
+        else{
         $cost = 0;
         while ($row_data = mysqli_fetch_assoc($result)) {
             
@@ -56,6 +60,9 @@ $id_user = $_SESSION['id_user'];
         }
             ?>
             <p>Всего: <?= $cost;?></p>  
+     <?
+        }
+        ?>
     </div>
         <form method="GET" action="../back/add_to_order.php">
         <input type="submit" name="add-to-order" value="Заказать" id="add-to-order">
