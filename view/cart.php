@@ -13,7 +13,7 @@ $id_user = $_SESSION['id_user'];
     $result_session = mysqli_query($link, $query_session);
     $session_data = mysqli_fetch_row($result_session);
     $sess = $session_data[0];
-$id_order_user = $sess;
+    $id_order_user = $sess;
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ $id_order_user = $sess;
         <p>Итого</p> 
 
     <?php
-        $query_orders = "SELECT name_candle, quantity, price_candle * quantity FROM cart, candles WHERE id_order_user = 17 AND id_user = 4 AND cart.id_candle = candles.id_candle;"; 
+        $query_orders = "SELECT name_candle, quantity, price_candle * quantity FROM cart, candles WHERE id_order_user = $id_order_user AND id_user = $id_user AND cart.id_candle = candles.id_candle;"; 
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
         $cost = 0;
