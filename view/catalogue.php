@@ -13,8 +13,6 @@ if (empty($_SESSION['username'])) {
         $id_data = mysqli_fetch_row($result_id);
         $id_user = $id_data[0];
         $_SESSION['id_user'] = $id_user;
-        echo $_SESSION['id_user'];
-        echo $SESSIONname;
 ?>
 
 <!DOCTYPE html>
