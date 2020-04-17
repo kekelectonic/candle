@@ -1,10 +1,10 @@
 <?php
 session_start();
 require_once "../back/connection.php";
-
+require_once "../back/parameters_construct.php";
 if (empty($_SESSION['username'])) {
     header('Location: auth.php');
-    exit();
+    exit();   
 }
 ?>
 <!DOCTYPE html>
@@ -29,77 +29,62 @@ if (empty($_SESSION['username'])) {
 <div class="container"> 
 <form class="content qAndS" action="">   
         <div class="content">
-<?php
-$queryColor = "SELECT `id_color_candle`, `name_color`, `eng_color` FROM `candle_color`";
-$resultColor = mysqli_query($link, $queryColor);
-?>
         <p> Выберите цвет:</p>
                 <select class="nav" name="select_color">
-<?php
-while ($rowDataColor = mysqli_fetch_assoc($resultColor)) {
-?>
+        <?php
+        while ($rowDataColor = mysqli_fetch_assoc($resultColor)) {
+        ?>
     <option class="<?= $rowDataColor['eng_color'];?>" value="<?= $rowDataColor['id_color_candle'];?>">
         <?= $rowDataColor['name_color'];?>
     </option>
-<?php
-}
-?>
+        <?php
+        }
+        ?>
                 </select>
         </div>
-<?php
-$querySmell = "SELECT `id_smell_candle`, `name_smell` FROM `candle_smell`";
-$resultSmell = mysqli_query($link, $querySmell);
-?>
+
         <div class="content">
-           
             <p> Выберите запах:</p>
                     <select class="nav" name="select_smell"> 
-<?php
-while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {
-?>                       
+        <?php
+        while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {
+        ?>                       
             <option value="<?= $rowDataSmell['id_smell_candle'];?>">
                 <?= $rowDataSmell['name_smell'];?>
             </option>
-<?php
-}
-?>
+        <?php
+        }
+        ?>
                     </select>
         </div>  
-<?php
-$queryForm = "SELECT `id_form_candle`, `name_form` FROM `candle_form`";
-$resultForm = mysqli_query($link, $queryForm);
-?>
+
         <div class="content">
             <p> Выберите форму:</p>
                     <select class="nav" name="select_form">
-<?php
-while ($rowDataForm = mysqli_fetch_assoc($resultForm)) {
-?> 
+        <?php
+        while ($rowDataForm = mysqli_fetch_assoc($resultForm)) {
+        ?> 
             <option value="<?= $rowDataForm['id_form_candle'];?>">
                 <?= $rowDataForm['name_form'];?>
             </option>
-<?php
-}
-?>
+        <?php
+        }
+        ?>
                     </select>
         </div>
         
-        <div class="content" >
-<?php
-$querySizePrice = "SELECT `id_size_price`, `size_candle`, `price_size` FROM `candle_size_price`";
-$resultSizePrice = mysqli_query($link, $querySizePrice);
-?>          
+        <div class="content">        
             <p> Выберите размер:</p>
                     <select class="nav" name="select_size">
-<?php
-while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) {
-?> 
+        <?php
+        while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) {
+        ?> 
             <option value="<?= $rowDataSizePrice['id_size_price'];?>">
                 <?= $rowDataSizePrice['size_candle'];?>
             </option>
-<?php
-}
-?>
+        <?php
+        }
+        ?>
                     </select>
         </div> 
             <button type="submit" class="sbmt"> Добавить в корзину </button>
