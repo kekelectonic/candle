@@ -1,11 +1,8 @@
 <?php
 session_start();
+require_once "../back/check_session.php";
 require_once "../back/connection.php";
 
-if (empty($_SESSION['username'])) {
-    header('Location: auth.php');
-    exit();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

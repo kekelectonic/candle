@@ -1,11 +1,9 @@
 <?php
 session_start();
+require_once "../back/check_session.php";
 require_once "../back/connection.php";
 require_once "../back/parameters_construct.php";
-if (empty($_SESSION['username'])) {
-    header('Location: auth.php');
-    exit();   
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,12 +86,7 @@ if (empty($_SESSION['username'])) {
                     </select>
         </div> 
             <button type="submit" class="sbmt"> Добавить в корзину </button>
-        </form>   
-        
-
+        </form>           
 </div>
-
-
-
 </body>
 </html>

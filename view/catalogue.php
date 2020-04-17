@@ -1,11 +1,7 @@
 <?php
 session_start();
+require_once "../back/check_session.php";
 require_once "../back/connection.php";
-
-if (empty($_SESSION['username'])) {
-    header('Location: auth.php');
-    exit();
-}
 
         $SESSIONname = $_SESSION['username'];
         $query_id = "SELECT id_user FROM users WHERE login = '$SESSIONname'";
