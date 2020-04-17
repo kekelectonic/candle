@@ -26,56 +26,83 @@ if (empty($_SESSION['username'])) {
 </header>
     <h1>Создайте свечу </h1>
     
-<div class="container">    
+<div class="container"> 
+<form class="content qAndS" action="">   
         <div class="content">
+<?php
+$queryColor = "SELECT `id_color_candle`, `name_color`, `eng_color` FROM `candle_color`";
+$resultColor = mysqli_query($link, $queryColor);
+?>
         <p> Выберите цвет:</p>
-                <select class="nav" name="select_color"> 
-                        <option class="red" value="red" selected >Красный</option> 
-                        <option class="orange" value="orange">Оранжевый</option>
-                        <option class="yellow" value="yellow">Желтый</option>
-                        <option class="green" value="green">Зеленый</option>
-                        <option class="blue" value="blue">Голубой</option>
-                        <option class="darkblue" value="darkblue">Синий</option>
-                        <option class="purple" value="purple">Фиолетовый </option>
+                <select class="nav" name="select_color">
+<?php
+while ($rowDataColor = mysqli_fetch_assoc($resultColor)) {
+?>
+    <option class="<?= $rowDataColor['eng_color'];?>" value="<?= $rowDataColor['id_color_candle'];?>">
+        <?= $rowDataColor['name_color'];?>
+    </option>
+<?php
+}
+?>
                 </select>
         </div>
-
+<?php
+$querySmell = "SELECT `id_smell_candle`, `name_smell` FROM `candle_smell`";
+$resultSmell = mysqli_query($link, $querySmell);
+?>
         <div class="content">
            
             <p> Выберите запах:</p>
                     <select class="nav" name="select_smell"> 
-                            <option value="1">channel №5</option> 
-                            <option value="2">trash</option>
-                            <option value="3">garbage</option>
-                            <option value="4">dirty MONK socks</option>
-                            <option value="5">dead fish</option>
-                            <option value="5">gspd </option>
-                            <option value="6"> Pugacheva</option>
+<?php
+while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {
+?>                       
+            <option value="<?= $rowDataSmell['id_smell_candle'];?>">
+                <?= $rowDataSmell['name_smell'];?>
+            </option>
+<?php
+}
+?>
                     </select>
         </div>  
-
+<?php
+$queryForm = "SELECT `id_form_candle`, `name_form` FROM `candle_form`";
+$resultForm = mysqli_query($link, $queryForm);
+?>
         <div class="content">
             <p> Выберите форму:</p>
-                    <select class="nav" name="select_form"> 
-                            <option value="1">Цилиндрическая</option> 
-                            <option value="2">Прямоугольная</option>
-                            <option value="3">Звёздочка</option>
+                    <select class="nav" name="select_form">
+<?php
+while ($rowDataForm = mysqli_fetch_assoc($resultForm)) {
+?> 
+            <option value="<?= $rowDataForm['id_form_candle'];?>">
+                <?= $rowDataForm['name_form'];?>
+            </option>
+<?php
+}
+?>
                     </select>
         </div>
         
         <div class="content" >
-           
+<?php
+$querySizePrice = "SELECT `id_size_price`, `size_candle`, `price_size` FROM `candle_size_price`";
+$resultSizePrice = mysqli_query($link, $querySizePrice);
+?>          
             <p> Выберите размер:</p>
-                    <select class="nav" name="select_size"> 
-                            <option value="1">5x5см</option> 
-                            <option value="2">10х10см</option>
-                            <option value="3">15х15см</option>
+                    <select class="nav" name="select_size">
+<?php
+while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) {
+?> 
+            <option value="<?= $rowDataSizePrice['id_size_price'];?>">
+                <?= $rowDataSizePrice['size_candle'];?>
+            </option>
+<?php
+}
+?>
                     </select>
         </div> 
-        <form class="content qAndS" >
-           <p> Количество:</p>
-                <input type="number" min="1" class="quantity">
-                <button type="submit" class="sbmt"> Добавить в корзину </button>
+            <button type="submit" class="sbmt"> Добавить в корзину </button>
         </form>   
         
 
