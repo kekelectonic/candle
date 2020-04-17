@@ -42,7 +42,8 @@ WHERE
     AND candles.id_color_candle = candle_color.id_color_candle 
     AND candles.id_form_candle = candle_form.id_form_candle 
     AND candles.id_smell_candle = candle_smell.id_smell_candle 
-    AND candles.id_size_candle = candle_size_price.id_size_price";                        
+    AND candles.id_size_candle = candle_size_price.id_size_price";
+    /////ЧТОБЫ НЕ ПОКАЗЫВАТЬ ПОЛЬЗОВАТЕЛЬСКИЕ СВЕЧИ ДОСТАТОЧНО ПРОПИСАТЬ УСЛОВИЕ ГДЕ id_name_candle != 4 /////////////////////////////////////                        
         $result = mysqli_query($link, $query);
 
         while ($row_data = mysqli_fetch_assoc($result)) {

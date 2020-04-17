@@ -25,64 +25,48 @@ require_once "../back/parameters_construct.php";
     <h1>Создайте свечу </h1>
     
 <div class="container"> 
-<form class="content qAndS" action="">   
+<form class="content qAndS" method ="GET" action="../back/add_to_cart_from_construct.php">   
         <div class="content">
         <p> Выберите цвет:</p>
                 <select class="nav" name="select_color">
-        <?php
-        while ($rowDataColor = mysqli_fetch_assoc($resultColor)) {
-        ?>
+        <?php while ($rowDataColor = mysqli_fetch_assoc($resultColor)) { ?>
     <option class="<?= $rowDataColor['eng_color'];?>" value="<?= $rowDataColor['id_color_candle'];?>">
         <?= $rowDataColor['name_color'];?>
     </option>
-        <?php
-        }
-        ?>
+        <?php } ?>
                 </select>
         </div>
 
         <div class="content">
             <p> Выберите запах:</p>
                     <select class="nav" name="select_smell"> 
-        <?php
-        while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {
-        ?>                       
+        <?php while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {?>                       
             <option value="<?= $rowDataSmell['id_smell_candle'];?>">
                 <?= $rowDataSmell['name_smell'];?>
             </option>
-        <?php
-        }
-        ?>
+        <?php } ?>
                     </select>
         </div>  
 
         <div class="content">
             <p> Выберите форму:</p>
                     <select class="nav" name="select_form">
-        <?php
-        while ($rowDataForm = mysqli_fetch_assoc($resultForm)) {
-        ?> 
+        <?php while ($rowDataForm = mysqli_fetch_assoc($resultForm)) { ?> 
             <option value="<?= $rowDataForm['id_form_candle'];?>">
                 <?= $rowDataForm['name_form'];?>
             </option>
-        <?php
-        }
-        ?>
+        <?php } ?>
                     </select>
         </div>
         
         <div class="content">        
             <p> Выберите размер:</p>
                     <select class="nav" name="select_size">
-        <?php
-        while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) {
-        ?> 
+        <?php while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) { ?> 
             <option value="<?= $rowDataSizePrice['id_size_price'];?>">
                 <?= $rowDataSizePrice['size_candle'];?>
             </option>
-        <?php
-        }
-        ?>
+        <?php } ?>
                     </select>
         </div> 
             <button type="submit" class="sbmt"> Добавить в корзину </button>

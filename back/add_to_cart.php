@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "../back/check_session.php";
 require_once "../back/connection.php";
 
 	$id_candle = $_GET['candleID'];
@@ -21,7 +22,7 @@ require_once "../back/connection.php";
     $quantity_data = mysqli_fetch_row($result_quantity);
     $quantity = $quantity_data[0];
 
-	///////////////////////ДОБАВЛЕНИЕ ЗАКАЗА В БД /////////////////////////////////////////////
+	///////////////////////ДОБАВЛЕНИЕ КОРЗИНЫ В БД ///////////////////////////
 	if($row_cnt > 0){
 		$quantity++;
 		$query = "UPDATE `cart` SET `quantity` = $quantity WHERE `id_candle` = $id_candle AND `id_user` = $id_user AND `id_order_user` = $id_order_user;";
