@@ -41,7 +41,15 @@ $id_user = $_SESSION['id_user'];
         <p>Итого</p> 
 
     <?php
-        $query_orders = "SELECT name_candle, quantity, price_candle * quantity FROM cart, candles WHERE id_order_user = $id_order_user AND id_user = $id_user AND cart.id_candle = candles.id_candle;"; 
+        $query_orders = "
+        SELECT name_candle, quantity, quantity * price_size 
+        FROM cart, candles, candle_size_price, candle_name 
+        WHERE id_order_user = $id_order_user 
+        AND id_user = $id_user 
+        AND cart.id_candle = candles.id_candle 
+        AND candles.id_size_candle = candle_size_price.id_size_price 
+        AND candles.id_name_candle = candle_name.id_name_candle;";
+
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
         if($row <= 0){
@@ -51,11 +59,11 @@ $id_user = $_SESSION['id_user'];
         $cost = 0;
         while ($row_data = mysqli_fetch_assoc($result)) {
             
-            $cost += $row_data['price_candle * quantity']; 
+            $cost += $row_data['quantity * price_size']; 
         ?>
             <p><?= $row_data['name_candle'];?></p>
             <p> <?= $row_data['quantity'];?></p>
-            <p><?= $row_data['price_candle * quantity'];?></p>
+            <p><?= $row_data['quantity * price_size'];?></p>
         <?
         }
             ?>

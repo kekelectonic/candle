@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2020 г., 19:58
+-- Время создания: Апр 17 2020 г., 14:13
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -30,23 +30,128 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `candles` (
   `id_candle` int(11) NOT NULL,
-  `name_candle` varchar(20) NOT NULL,
-  `color_candle` varchar(30) NOT NULL,
-  `form_candle` varchar(30) NOT NULL,
-  `smell_candle` varchar(30) NOT NULL,
-  `size_candle` varchar(30) NOT NULL,
-  `price_candle` int(5) NOT NULL,
-  `img_candle` text
+  `id_name_candle` int(11) NOT NULL,
+  `id_color_candle` int(11) NOT NULL,
+  `id_form_candle` int(11) NOT NULL,
+  `id_smell_candle` int(11) NOT NULL,
+  `id_size_candle` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `candles`
 --
 
-INSERT INTO `candles` (`id_candle`, `name_candle`, `color_candle`, `form_candle`, `smell_candle`, `size_candle`, `price_candle`, `img_candle`) VALUES
-(1, 'Лаванда Ф', 'фиолетовый', 'цилиндр', 'лаванда', 'маленький', 150, '../img/cart.png'),
-(2, 'Помойка К', 'красный', 'динамит', 'помойка', 'средний', 600, '../img/cart.png'),
-(3, 'Лимон ж', 'желтый', 'круглый', 'лимон', 'большой', 1000, '');
+INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_form_candle`, `id_smell_candle`, `id_size_candle`) VALUES
+(1, 1, 7, 1, 1, 1),
+(2, 2, 6, 3, 5, 3),
+(3, 3, 3, 1, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `candle_color`
+--
+
+CREATE TABLE `candle_color` (
+  `id_color_candle` int(11) NOT NULL,
+  `name_color` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `candle_color`
+--
+
+INSERT INTO `candle_color` (`id_color_candle`, `name_color`) VALUES
+(1, 'Красный'),
+(2, 'Оранжевый'),
+(3, 'Желтый'),
+(4, 'Зеленый'),
+(5, 'Голубой'),
+(6, 'Синий'),
+(7, 'Фиолетовый');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `candle_form`
+--
+
+CREATE TABLE `candle_form` (
+  `id_form_candle` int(11) NOT NULL,
+  `name_form` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `candle_form`
+--
+
+INSERT INTO `candle_form` (`id_form_candle`, `name_form`) VALUES
+(1, 'Цилиндрическая'),
+(2, 'Прямоугольная'),
+(3, 'Звёздочка');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `candle_name`
+--
+
+CREATE TABLE `candle_name` (
+  `id_name_candle` int(11) NOT NULL,
+  `name_candle` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `candle_name`
+--
+
+INSERT INTO `candle_name` (`id_name_candle`, `name_candle`) VALUES
+(1, 'Лаванда Ф'),
+(2, 'Помойка К'),
+(3, 'Лимон Ж');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `candle_size_price`
+--
+
+CREATE TABLE `candle_size_price` (
+  `id_size_price` int(11) NOT NULL,
+  `size_candle` varchar(30) NOT NULL,
+  `price_size` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `candle_size_price`
+--
+
+INSERT INTO `candle_size_price` (`id_size_price`, `size_candle`, `price_size`) VALUES
+(1, '5x5см', 150),
+(2, '10х10см', 200),
+(3, '15х15см', 300);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `candle_smell`
+--
+
+CREATE TABLE `candle_smell` (
+  `id_smell_candle` int(11) NOT NULL,
+  `name_smell` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `candle_smell`
+--
+
+INSERT INTO `candle_smell` (`id_smell_candle`, `name_smell`) VALUES
+(1, 'channel №5'),
+(2, 'trash'),
+(3, 'garbage'),
+(4, 'gspd'),
+(5, 'Pugacheva');
 
 -- --------------------------------------------------------
 
@@ -68,9 +173,24 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`) VALUES
-(1, 1, 5, 4, '2020-04-16 18:42:08', 17),
-(2, 2, 4, 4, '2020-04-16 18:42:48', 17),
-(3, 3, 3, 4, '2020-04-16 18:42:51', 17);
+(1, 1, 2, 4, '2020-04-17 13:57:03', 23),
+(2, 2, 2, 4, '2020-04-17 13:57:05', 23),
+(3, 3, 1, 4, '2020-04-17 13:57:07', 23);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id_orders` int(11) NOT NULL,
+  `id_candle` int(11) NOT NULL,
+  `quantity` int(5) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `id_order_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -94,7 +214,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 17);
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 23),
+(5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -104,7 +225,42 @@ INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, 
 -- Индексы таблицы `candles`
 --
 ALTER TABLE `candles`
-  ADD PRIMARY KEY (`id_candle`);
+  ADD PRIMARY KEY (`id_candle`),
+  ADD KEY `id_name_candle` (`id_name_candle`),
+  ADD KEY `id_color_candle` (`id_color_candle`),
+  ADD KEY `id_form_candle` (`id_form_candle`),
+  ADD KEY `id_smell_candle` (`id_smell_candle`),
+  ADD KEY `id_size_candle` (`id_size_candle`);
+
+--
+-- Индексы таблицы `candle_color`
+--
+ALTER TABLE `candle_color`
+  ADD PRIMARY KEY (`id_color_candle`);
+
+--
+-- Индексы таблицы `candle_form`
+--
+ALTER TABLE `candle_form`
+  ADD PRIMARY KEY (`id_form_candle`);
+
+--
+-- Индексы таблицы `candle_name`
+--
+ALTER TABLE `candle_name`
+  ADD PRIMARY KEY (`id_name_candle`);
+
+--
+-- Индексы таблицы `candle_size_price`
+--
+ALTER TABLE `candle_size_price`
+  ADD PRIMARY KEY (`id_size_price`);
+
+--
+-- Индексы таблицы `candle_smell`
+--
+ALTER TABLE `candle_smell`
+  ADD PRIMARY KEY (`id_smell_candle`);
 
 --
 -- Индексы таблицы `cart`
@@ -114,6 +270,14 @@ ALTER TABLE `cart`
   ADD KEY `id_candle` (`id_candle`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_order_user` (`id_order_user`);
+
+--
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id_orders`),
+  ADD KEY `id_candle` (`id_candle`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Индексы таблицы `users`
@@ -131,18 +295,58 @@ ALTER TABLE `users`
 ALTER TABLE `candles`
   MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT для таблицы `candle_color`
+--
+ALTER TABLE `candle_color`
+  MODIFY `id_color_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT для таблицы `candle_form`
+--
+ALTER TABLE `candle_form`
+  MODIFY `id_form_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `candle_name`
+--
+ALTER TABLE `candle_name`
+  MODIFY `id_name_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `candle_size_price`
+--
+ALTER TABLE `candle_size_price`
+  MODIFY `id_size_price` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `candle_smell`
+--
+ALTER TABLE `candle_smell`
+  MODIFY `id_smell_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
   MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
+
+--
+-- Ограничения внешнего ключа таблицы `candles`
+--
+ALTER TABLE `candles`
+  ADD CONSTRAINT `candles_ibfk_1` FOREIGN KEY (`id_color_candle`) REFERENCES `candle_color` (`id_color_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `candles_ibfk_2` FOREIGN KEY (`id_form_candle`) REFERENCES `candle_form` (`id_form_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `candles_ibfk_3` FOREIGN KEY (`id_name_candle`) REFERENCES `candle_name` (`id_name_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `candles_ibfk_4` FOREIGN KEY (`id_size_candle`) REFERENCES `candle_size_price` (`id_size_price`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `candles_ibfk_5` FOREIGN KEY (`id_smell_candle`) REFERENCES `candle_smell` (`id_smell_candle`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `cart`
@@ -150,6 +354,13 @@ ALTER TABLE `users`
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_candle`) REFERENCES `candles` (`id_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_candle`) REFERENCES `candles` (`id_candle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

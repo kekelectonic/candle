@@ -30,7 +30,8 @@ if (isset($_POST['auth-button'])) {
         $id_user = $_SESSION['id_user'];
         
 //////////////////////////////////////////////////////////////////
-//ОЧЕНЬ СЛОЖНАЯ ШТУКА ДАЖЕ НЕ ПЫТАЙТЕСЬ ПОНЯТЬ ЗАЧЕМ//////////////////////////////////////////
+//ОЧЕНЬ СЛОЖНАЯ ШТУКА 
+//ДАЖЕ НЕ ПЫТАЙТЕСЬ ПОНЯТЬ ЗАЧЕМ//////////////////////////////////////////
         $query_session = "SELECT `session_order` FROM `users` WHERE `id_user` = $id_user;";
         $result_session = mysqli_query($link, $query_session);
         $session_data = mysqli_fetch_row($result_session);
