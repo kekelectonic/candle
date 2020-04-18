@@ -17,9 +17,9 @@ require_once "../back/parameters_construct.php";
 <body>
    
 <header>
-    <a href="account.php"> Личный кабинет </a>
+    <a href="catalogue.php"> Каталог </a>   
     <a href="cart.php"> Корзина </a>
-    <a href="catalogue.php"> Каталог </a>
+    <a href="account.php"> Личный кабинет </a> 
     <a href="../back/logout.php"> Выйти </a>
 </header>
     <h1>Создайте свечу </h1>

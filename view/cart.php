@@ -25,8 +25,9 @@ $id_user = $_SESSION['id_user'];
 <body>
 
 <header>
+    <a href="catalogue.php"> Каталог </a>
+    <a href="construct.php"> Конструктор </a>
     <a href="account.php"> Личный кабинет </a>
-    <a href="catalogue.php"> Вернуться в Каталог </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
 

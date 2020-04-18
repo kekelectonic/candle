@@ -28,9 +28,9 @@ require_once "../back/connection.php";
     ?>    
 
     <header>
-        <a href="catalogue.php"> Выбрать из каталога </a>
+        <a href="catalogue.php"> Каталог </a>    
+        <a href="construct.php"> Конструктор </a>
         <a href="cart.php"> Корзина </a>
-        <a href="construct.php"> Создать свой вариант </a>
         <a href="../back/logout.php"> Выйти </a>
     </header>
     

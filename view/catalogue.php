@@ -23,9 +23,9 @@ require_once "../back/connection.php";
 <body>
 
 <header>
-    <a href="account.php"> Личный кабинет </a>
+    <a href="construct.php"> Конструктор </a>   
     <a href="cart.php"> Корзина </a>
-    <a href="construct.php"> Создать свой вариант </a>
+    <a href="account.php"> Личный кабинет </a>   
     <a href="../back/logout.php"> Выйти </a>
 
 

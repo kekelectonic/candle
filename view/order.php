@@ -20,8 +20,8 @@ $result = mysqli_query($link, $queryOrders);
 
 <header>
     <a href="account.php"> Личный кабинет </a>
-    <a href="cart.php"> Корзина </a>
     <a href="catalogue.php"> Каталог </a>
+    <a href="cart.php"> Корзина </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
 
