@@ -3,6 +3,9 @@ session_start();
 require_once "../back/check_session.php";
 require_once "../back/connection.php";
 
+$id_user = $_SESSION['id_user'];
+$queryOrders = "SELECT DISTINCT `id_order_user`, `date`, `cost_order` FROM `cart` WHERE `id_user` = $id_user AND status_order = 'order'";
+$result = mysqli_query($link, $queryOrders);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,24 +28,20 @@ require_once "../back/connection.php";
 <div class="container">
     
     <div class="content">
-        <p>ID</p>
-        <p>Дата</p> 
-        <p>Итого</p> 
+        <p>Номер заказа</p>
+        <p>Дата заказа</p> 
+        <p>Сумма заказа</p> 
 
-            <p> <a href="order_info.php">211</a> </p>
-            <p> 11.04.2020</p>
-            <p> 1208р</p>
+<?php
+while ($row_data = mysqli_fetch_assoc($result)) {
+  ?>
+            <p> <a href="order_info.php?id_order=<?=$row_data["id_order_user"];?>"><?= $row_data['id_order_user'];?></a> </p>
+            <p><?= $row_data['date'];?></p>
+            <p><?= $row_data['cost_order'];?> руб</p>
+ <?php
+}
+ ?>           
 
-            <p> <a href="order_info.php">211</a> </p>
-            <p> 11.04.2020</p>
-            <p> 1208р</p>
-            <p> <a href="order_info.php">211</a> </p>
-            <p> 11.04.2020</p>
-            <p> 1208р</p>
-            <p> <a href="order_info.php">211</a> </p>
-            <p> 11.04.2020</p>
-            <p> 1208р</p>
-            
     </div>
         
        

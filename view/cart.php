@@ -33,16 +33,17 @@ $id_user = $_SESSION['id_user'];
 <div class="container">
     
     <div class="content">
-        <p>Название</p>
-        <p>Количество</p> 
-        <p>Итого</p> 
+            <p>Товар</p>
+            <p>Цена за шт</p> 
+            <p>Количество</p>
+            <p>Сумма</p>
 
     <?php
         $query_orders = "
-        SELECT name_candle, quantity, quantity * price_size 
+        SELECT name_candle, quantity, quantity * price_size, status_order 
         FROM cart, candles, candle_size_price, candle_name 
         WHERE id_order_user = $id_order_user 
-        AND id_user = $id_user 
+        AND id_user = $id_user AND status_order = 'cart' 
         AND cart.id_candle = candles.id_candle 
         AND candles.id_size_candle = candle_size_price.id_size_price 
         AND candles.id_name_candle = candle_name.id_name_candle;";
@@ -59,14 +60,16 @@ $id_user = $_SESSION['id_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
             <p><?= $row_data['name_candle'];?></p>
-            <p> <?= $row_data['quantity'];?></p>
-            <p><?= $row_data['quantity * price_size'];?></p>
+            <p>10 руб</p>
+            <p><?= $row_data['quantity'];?> шт</p>
+            <p><?= $row_data['quantity * price_size'];?> руб</p>
         <?
         }
             ?>
-            <p>Всего: <?= $cost;?></p>  
+            <p>Всего: <?= $cost;?> руб</p>  
      <?
         }
+        $_SESSION['cost_order'] = $cost;
         ?>
     </div>
         <form method="GET" action="../back/add_to_order.php">

@@ -2,6 +2,11 @@
 session_start();
 require_once "../back/check_session.php";
 require_once "../back/connection.php";
+$id_order = $_GET['id_order'];
+$id_user = $_SESSION['id_user'];
+$queryInfoOrder = "
+        SELECT name_candle, price_size, quantity, quantity * price_size, status_order, cost_order FROM cart, candles, candle_size_price, candle_name WHERE id_order_user = $id_order AND id_user = $id_user AND status_order = 'order' AND cart.id_candle = candles.id_candle AND candles.id_size_candle = candle_size_price.id_size_price AND candles.id_name_candle = candle_name.id_name_candle";
+$resultInfoOrder = mysqli_query($link, $queryInfoOrder);
 
 ?>
 <!DOCTYPE html>
@@ -25,50 +30,25 @@ require_once "../back/connection.php";
 <div class="container">
     
         <div class="content">
-            <p>ТОВАР</p>
-            <p>Цена</p> 
+            <p>Товар</p>
+            <p>Цена за шт</p> 
             <p>Количество</p>
             <p>Сумма</p>
+<?php
+$cost = 0;
+while ($row_data = mysqli_fetch_assoc($resultInfoOrder)) {
+            $cost += $row_data['quantity * price_size'];
+?>
+            <p><?= $row_data['name_candle'];?></p>
+            <p><?= $row_data['price_size'];?> руб</p>
+            <p><?= $row_data['quantity'];?> шт</p>
+            <p><?= $row_data['quantity * price_size'];?> руб</p>
+<?php
+}
+?>
 
-            <p> Аромасвеча "восток"</p>
-            <p> 300р</p>
-            <p> 1шт</p>
-            <p> 300р</p>
-
-            <p> Аромасвеча "дикий запад"</p>
-            <p> 200р</p>
-            <p> 2шт</p>
-            <p> 400р</p>
-
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-            <p> Аромасвеча "пугачёва"</p>
-            <p> 1000р</p>
-            <p> 3шт</p>
-            <p> 3000р</p>
-        </div>
+<!-- <p>Всего: <?=$cost;?> руб</p>
+ -->        </div>
         <div class="content">
             <a href="#">Повторить заказ</a>
         </div>

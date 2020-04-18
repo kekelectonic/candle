@@ -28,8 +28,8 @@ $LastIdCandle = $rowDataId['id_candle'];
 
 //////////////////////ПОТОМ ИДЕТ ДОБАВЛЕНИЕ В КОРЗИНУ/////////////////////////
 
-$queryToCart = "INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`)  
-	VALUES(NULL, $LastIdCandle, 1, $id_user, NOW(), $id_order_user);";
+$queryToCart = "INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`)  
+	VALUES(NULL, $LastIdCandle, 1, $id_user, NOW(), $id_order_user, 'cart');";
 
 $resultToCart = mysqli_query($link, $queryToCart) or die("Ошибка " . mysqli_error($link));
 
