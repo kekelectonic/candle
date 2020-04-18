@@ -41,13 +41,22 @@ if (isset($_POST['auth-button'])) {
         $query_update_session = "UPDATE `users` SET `session_order` = $session WHERE `id_user` = $id_user;";
         $result_update_session = mysqli_query($link, $query_update_session);
 
-
-        $query_session2 = "SELECT `session_order` FROM `users` WHERE `id_user` = $id_user;";
-        $result_session2 = mysqli_query($link, $query_session2);
-        $session_data2 = mysqli_fetch_row($result_session2);
-        $session = $session_update[0];
         $_SESSION['session'] = $session;
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////ЕСЛИ В КОРЗИНЕ ЧТО-ТО ОСТАЛОСЬ////////////////////////////////////////////////////////
+$queryCart = "SELECT DISTINCT `id_order_user`, `status_order` FROM `cart` WHERE `id_user` = $id_user AND `status_order` = 'cart' ORDER BY `cart`.`id_order_user` DESC LIMIT 1";
+$resultCart = mysqli_query($link, $queryCart);
+$rowData = mysqli_fetch_assoc($resultCart);
+$lastOrder = $rowData['id_order_user'];
+$row_cnt = mysqli_num_rows($resultCart);
+
+//////////////////////
+if ($row_cnt > 0){
+$queryToCart = "UPDATE `cart` SET `id_order_user`= $session WHERE `id_user` = $id_user AND `status_order` = 'cart' AND `id_order_user` = $lastOrder;";
+$resultCart = mysqli_query($link, $queryToCart);
+}
+
+/////////////////////////////////////////////
+
       header('Location: catalogue.php');
     }
 
