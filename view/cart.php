@@ -40,7 +40,7 @@ $id_user = $_SESSION['id_user'];
 
     <?php
         $query_orders = "
-        SELECT name_candle, quantity, quantity * price_size, status_order 
+        SELECT name_candle, quantity, price_size, quantity * price_size, status_order 
         FROM cart, candles, candle_size_price, candle_name 
         WHERE id_order_user = $id_order_user 
         AND id_user = $id_user AND status_order = 'cart' 
@@ -60,7 +60,7 @@ $id_user = $_SESSION['id_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
             <p><?= $row_data['name_candle'];?></p>
-            <p>10 руб</p>
+            <p><?= $row_data['price_size'];?></p>
             <p><?= $row_data['quantity'];?> шт</p>
             <p><?= $row_data['quantity * price_size'];?> руб</p>
         <?
