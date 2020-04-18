@@ -47,10 +47,10 @@ while ($row_data = mysqli_fetch_assoc($resultInfoOrder)) {
 }
 ?>
 
-<!-- <p>Всего: <?=$cost;?> руб</p>
- -->        </div>
+<p>Всего: <?=$cost;?> руб</p>
+        </div>
         <div class="content">
-            <a href="#">Повторить заказ</a>
+            <a href="../back/repeat_order.php?id_order=<?=$id_order;?>">Повторить заказ</a>
         </div>
        
 </div>

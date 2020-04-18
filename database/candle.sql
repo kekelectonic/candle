@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 18 2020 г., 17:56
+-- Время создания: Апр 18 2020 г., 18:49
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -46,7 +46,8 @@ INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_for
 (2, 2, 6, 3, 5, 3),
 (3, 3, 3, 1, 2, 2),
 (4, 4, 5, 3, 3, 2),
-(5, 4, 3, 3, 1, 2);
+(5, 4, 3, 3, 1, 2),
+(6, 4, 1, 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -174,19 +175,6 @@ CREATE TABLE `cart` (
   `cost_order` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `cart`
---
-
-INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`, `cost_order`) VALUES
-(1, 1, 3, 4, '2020-04-18 16:50:07', 37, 'order', 450),
-(2, 1, 1, 4, '2020-04-18 16:51:20', 38, 'order', 650),
-(3, 3, 1, 4, '2020-04-18 16:51:20', 38, 'order', 650),
-(4, 2, 1, 4, '2020-04-18 16:51:20', 38, 'order', 650),
-(5, 1, 4, 4, '2020-04-18 17:23:27', 39, 'order', 900),
-(6, 2, 1, 4, '2020-04-18 17:23:27', 39, 'order', 900),
-(7, 1, 1, 4, '2020-04-18 17:24:53', 40, 'cart', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -209,7 +197,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 40),
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 45),
 (5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1);
 
 --
@@ -280,7 +268,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `candle_color`
 --
@@ -310,7 +298,7 @@ ALTER TABLE `candle_smell`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
