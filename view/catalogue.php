@@ -34,31 +34,31 @@ require_once "../back/connection.php";
   
     <?php
         $query = "
-SELECT id_candle, name_candle, name_color, name_form, name_smell, size_candle, price_size
+SELECT id_candle, name_candle, name_color, name_smell, size_candle, price_size, url_image
 FROM
-    candles, candle_name, candle_color, candle_form, candle_smell, candle_size_price
+    candles, candle_name, candle_color, candle_smell, candle_size_price, candle_image
 WHERE
     candles.id_name_candle = candle_name.id_name_candle 
     AND candles.id_color_candle = candle_color.id_color_candle 
-    AND candles.id_form_candle = candle_form.id_form_candle 
     AND candles.id_smell_candle = candle_smell.id_smell_candle 
-    AND candles.id_size_candle = candle_size_price.id_size_price";
-    /////ЧТОБЫ НЕ ПОКАЗЫВАТЬ ПОЛЬЗОВАТЕЛЬСКИЕ СВЕЧИ ДОСТАТОЧНО ПРОПИСАТЬ УСЛОВИЕ ГДЕ id_name_candle != 4 /////////////////////////////////////                        
+    AND candles.id_size_candle = candle_size_price.id_size_price
+    AND candles.id_image = candle_image.id_image
+    AND candles.id_name_candle != 1";
+    /////ЧТОБЫ НЕ ПОКАЗЫВАТЬ ПОЛЬЗОВАТЕЛЬСКИЕ СВЕЧИ ДОСТАТОЧНО ПРОПИСАТЬ УСЛОВИЕ ГДЕ id_name_candle != 1 /////////////////////////////////////                        
         $result = mysqli_query($link, $query);
 
         while ($row_data = mysqli_fetch_assoc($result)) {
             
             ?>
-            <div class='pic'>
+            <div class='pic' style="background-image: url(<?= $row_data['url_image'];?>);">
                 <p class='descP'>
-                    <span><? echo $row_data['name_candle'];?></span>
-                    Цвет: <? echo $row_data['name_color'];?> <br>
-                    Форма: <? echo $row_data['name_form'];?> <br>
-                    Запах: <? echo  $row_data['name_smell']; ?> <br>
-                    Размер: <? echo $row_data['size_candle']; ?> <br>
-                    Цена: <? echo $row_data['price_size']; ?> <br>
-
+                    <span><?= $row_data['name_candle'];?></span>
+                    Цвет: <?= $row_data['name_color'];?> <br>
+                    Запах: <?=  $row_data['name_smell']; ?> <br>
+                    Размер: <?= $row_data['size_candle']; ?> <br>
+                    Цена: <?= $row_data['price_size']; ?> <br>             
                     <a href="../back/add_to_cart.php?candleID=<?= $row_data["id_candle"];?>" class='sbmt'></a>
+                    <span style="font-size: smaller;">Количество товара укажите в Корзине</span>
                 </p>
             </div>
             <?

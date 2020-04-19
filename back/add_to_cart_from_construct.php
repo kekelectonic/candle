@@ -5,11 +5,10 @@ require_once "../back/connection.php";
 
 //////////СНАЧАЛА ИДЕТ ДОБАВЛЕНИЕ В ТАБЛИЦУ СВЕЧИ/////////////////////////////////
 $IdSelectColor = $_GET['select_color'];
-$IdSelectForm = $_GET['select_form'];
 $IdSelectSmell = $_GET['select_smell'];
 $IdSelectSize = $_GET['select_size'];
 
-$queryToCandles = "INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_form_candle`, `id_smell_candle`, `id_size_candle`) VALUES (NULL, 4, $IdSelectColor, $IdSelectForm, $IdSelectSmell, $IdSelectSize);";
+$queryToCandles = "INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_smell_candle`, `id_size_candle`, `id_image`) VALUES (NULL, 1, $IdSelectColor, $IdSelectSmell, $IdSelectSize, 1);";
 $resultToCandles = mysqli_query($link, $queryToCandles);
 
 /////////ТУТ ЖЕ ВЫБИРАЕМ ЭТУ СВЕЧУ/////////////////////

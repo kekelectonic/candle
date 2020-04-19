@@ -47,17 +47,6 @@ require_once "../back/parameters_construct.php";
         <?php } ?>
                     </select>
         </div>  
-
-        <div class="content">
-            <p> Выберите форму:</p>
-                    <select class="nav" name="select_form">
-        <?php while ($rowDataForm = mysqli_fetch_assoc($resultForm)) { ?> 
-            <option value="<?= $rowDataForm['id_form_candle'];?>">
-                <?= $rowDataForm['name_form'];?>
-            </option>
-        <?php } ?>
-                    </select>
-        </div>
         
         <div class="content">        
             <p> Выберите размер:</p>
