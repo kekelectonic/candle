@@ -58,7 +58,7 @@ if (isset($_POST['reg-button'])) {
             <p><input type="text" name="phone" required="" placeholder="Телефон..."></p>
             <p><input type="text" name="address" required="" placeholder="Адрес..."></p>
 
-            <p><input type="submit" name="reg-button" value="Зарегистрироваться"></p>
+            <p><input type="submit" name="reg-button" value="Зарегистрироваться" class="add"></p>
             
             <p><a href="../index.php"> <span>У меня уже есть аккаунт</a></p>
         </form>

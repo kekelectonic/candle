@@ -6,7 +6,7 @@
 body {
     background: rgb(244,128,178);
     background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
-    
+    padding: 10px;
     font-family: 'Comic Neue', cursive;
 }
 /* HEADER START */
@@ -19,12 +19,15 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: 1% auto;
+    margin: 0 auto;
 
     display: flex;
-    flex-direction: row;
-
- 
+    flex-direction: row;    
+}
+@media screen and (max-width: 550px) {
+    header {
+        flex-flow: row wrap;
+    }
     
 }
 

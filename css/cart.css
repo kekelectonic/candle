@@ -6,7 +6,7 @@
 body {
     background: rgb(244,128,178);
     background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
-    
+    padding: 10px;
     font-family: 'Comic Neue', cursive;
 }
 /* HEADER START */
@@ -19,7 +19,7 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: 1% auto;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: row;
@@ -31,7 +31,6 @@ header {
 header a   {
     width: 50%;
     
-  
     padding: 2% 2%;
 
     text-decoration: none;
@@ -43,6 +42,12 @@ header a   {
     font-size: 2em;
     color: black;
     
+    
+}
+@media screen and (max-width: 550px) {
+    header {
+        flex-flow: row wrap;
+    }
     
 }
 
@@ -58,7 +63,8 @@ header a:hover {
     height: 500px;
     width: 50%;
     max-width: 1280px;
-    margin: 2% auto;
+    margin: 0 auto;
+    padding: 10px;
     
     border-radius: 12px;
     background-color: white;
@@ -88,20 +94,65 @@ header a:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     
 }
-
+.del:hover {
+    color: rgb(244,128,178);
+}
 .content p {
     margin: 2%;
 }
 
-
-.content a{
+a{
 
     color: black;
     text-decoration: none;
- 
-
-     
 }
-.content a:hover{
+a:hover{
    color: rgb(244,128,178);
+}
+
+.cost {
+    font-size: 2em;
+    text-align: center;
+}
+
+.cost span {
+    color: white;
+    font-weight: 800;
+}
+
+
+nav {
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 2% auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav a, footer a {
+    
+    background: white;
+    border-radius: 12px;
+
+    padding: 10px;
+    
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+}
+
+nav a:hover, footer a:hover {
+    background:  rgba(106,164,232,0.8883928571428571);
+    
+    color: white;
+
+}
+footer p{
+    text-align: center;
+    margin-top: 1%;
+    
 }

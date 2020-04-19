@@ -31,8 +31,16 @@ $id_user = $_SESSION['id_user'];
     <a href="../back/logout.php"> Выйти </a>
 </header>
 
+    <nav> 
+        <p><a href="../back/clear-cart.php?idOrd=<?= $order;?>">Очистить корзину</a></p>  
+        
+    </nav>
+
+
+
 <div class="container">
-    
+
+
     <div class="content">
             <p>Товар</p>
             <p>Цена за шт</p> 
@@ -77,28 +85,27 @@ $id_user = $_SESSION['id_user'];
                 <a href="../back/plus_quantity.php?idCandle=<?= $row_data['id_candle'];?>&idOrder=<?= $row_data['id_order_user'];?>&quantity=<?= $row_data['quantity'];?>">+</a>
             </p>
             <p><?= $row_data['quantity * price_size'];?> руб</p>
-            <p><a href="../back/del-candle-from-cart.php?idOrder=<?= $row_data['id_order_user'];?>&idCandle=<?= $row_data['id_candle'];?>">Удалить</a></p>
+            <p><a href="../back/del-candle-from-cart.php?idOrder=<?= $row_data['id_order_user'];?>&idCandle=<?= $row_data['id_candle'];?>"><span class='del'>Удалить</span></a></p>
            
         <?
         }
             ?>
-            <p>Всего: <?= $cost;?> руб</p>        
+              
      <?
         }
         $_SESSION['cost_order'] = $cost;
         if($row > 0){
         ?>
-    <p><a href="../back/add_to_order.php">Заказать</a></p>
-    <p></p>
-    <p></p>
-<p><a href="../back/clear-cart.php?idOrd=<?= $order;?>">Очистить корзину</a></p>  
+
 <?php
 }
 ?>
-
+    </div>
 </div>
 
-</div>
-
+<footer>
+<p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
+<p><a href="../back/add_to_order.php" class>Заказать</a></p>
+</footer>
 </body>
 </html>

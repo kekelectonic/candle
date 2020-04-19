@@ -87,7 +87,7 @@ $resultCart = mysqli_query($link, $queryToCart);
       <form class="login-form" method="POST">
         <p><input type="text" name="auth-login" required placeholder="Ваш логин..."/></p>
         <p><input type="password" name="auth-pass" required placeholder="Ваш пароль..."/></p>
-        <p><input type="submit" name="auth-button" required value="ВОЙТИ"></p>
+        <p><input type="submit" name="auth-button" required value="ВОЙТИ" class="add"></p>
         <p class="reg"><a href="register.php">Регистрация</a> </p>
       </form>
     </div>

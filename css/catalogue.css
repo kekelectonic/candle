@@ -7,8 +7,11 @@ body {
     background: rgb(244,128,178);
     background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
     
+    padding: 10px;
     font-family: 'Comic Neue', cursive;
 
+    margin: 0 auto;
+ 
 }
 /* HEADER START */
 
@@ -20,11 +23,16 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: .5% auto;
+    margin: 0 auto;
 
     display: flex;
-    flex-direction: row;
-    
+    flex-flow: row nowrap;
+}
+
+@media screen and (max-width: 550px) {
+    header {
+        flex-flow: row wrap;
+    }
     
 }
 
@@ -40,7 +48,7 @@ header a {
     align-items: center;
     justify-content: center;
 
-    font-size: 2em;
+    font-size: 30px;
     color: black;
     
     
@@ -67,6 +75,7 @@ header a:hover {
     background-color: white;
 
     margin: 2% auto;
+    padding: 5px;
 
     display: flex;
     flex-flow: row wrap;
@@ -80,13 +89,13 @@ header a:hover {
     height: 250px;
     width: 250px;
     
-    background-image: url("../img/candle.jpg");
+    
     background-size: 90%;
     background-position: center center;
     background-repeat: no-repeat;
 
-    margin: 2% auto;
-    padding: 10px;
+    margin: 1% auto;
+    
 
     display: flex;
     flex-direction: column;
@@ -122,9 +131,13 @@ header a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    
     opacity: 0;
+
+    text-align: center;
     color: white; 
+    font-size: .8em;
+
     position: relative;
 }
 

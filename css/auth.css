@@ -1,26 +1,20 @@
 *
-{  
-    margin: 0px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+body {
+    background: rgb(244,128,178);
+    background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
     
-}
-html
-{
-    background: #d0bb93;
+    font-family: 'Comic Neue', cursive;
 
-}
-body 
-{   
-    font-family: "Comfortaa", sans-serif;
-    padding: 1%;
-    letter-spacing: 1.2px;
- 
 }
 main 
 {   
     max-width: 720px;
-    max-height: 1000px;
+    
     margin: 10% auto;
     
 }
@@ -35,16 +29,16 @@ main
     text-align: center;
 }
 
-#book_add
+.add
 {   
     height: 15%;
     font-size: 22px;
     border-radius: 10px;
     transition: 0.3s;
 }
-#book_add:hover  
+.add:hover  
 {
-    background-color: #4CAF50; /* Green */
+    background:  rgba(106,164,232,0.8883928571428571);
     color: white;
 }
 form
@@ -77,5 +71,5 @@ a, p.reg
 a:hover
 {   
     transition: 0.3s;
-    color:#4CAF50
+    color: rgba(106,164,232,0.8883928571428571);
 }
