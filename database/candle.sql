@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2020 г., 14:22
+-- Время создания: Апр 19 2020 г., 18:30
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -50,7 +50,8 @@ INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_sme
 (6, 7, 6, 6, 2, 7),
 (7, 1, 3, 1, 1, 1),
 (8, 1, 1, 1, 2, 1),
-(9, 1, 1, 1, 3, 1);
+(9, 1, 1, 1, 3, 1),
+(10, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -208,7 +209,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 69),
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 71),
 (5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1);
 
 --
@@ -279,7 +280,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `candle_color`
 --
@@ -309,7 +310,7 @@ ALTER TABLE `candle_smell`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --

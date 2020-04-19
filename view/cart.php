@@ -38,10 +38,11 @@ $id_user = $_SESSION['id_user'];
             <p>Цена за шт</p> 
             <p>Количество</p>
             <p>Сумма</p>
+            <p>Действие</p>
 
     <?php
         $query_orders = "
-        SELECT name_candle, quantity, price_size, quantity * price_size, status_order 
+        SELECT cart.id_candle, id_order_user, name_candle, quantity, price_size, quantity * price_size, status_order 
         FROM cart, candles, candle_size_price, candle_name 
         WHERE id_order_user = $id_order_user 
         AND id_user = $id_user AND status_order = 'cart' 
@@ -52,34 +53,52 @@ $id_user = $_SESSION['id_user'];
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
         if($row <= 0){
-            echo "В корзине пока нет товаров";
+            echo "<p></p>";
+            echo "<p></p>";
+            echo "<p></p>";
+            echo "<p></p>";
+            echo "<p></p>";
+            echo "<p></p>";
+            echo "<p> В корзине</p>";
+            echo "<p>пока нет</p>";
+            echo "<p>товаров</p>";
         }
         else{
         $cost = 0;
         while ($row_data = mysqli_fetch_assoc($result)) {
-            
+            $order = $row_data['id_order_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
             <p><?= $row_data['name_candle'];?></p>
             <p><?= $row_data['price_size'];?></p>
-            <p><?= $row_data['quantity'];?> шт</p>
+            <p>
+                <a href="../back/minus_quantity.php?idCandle=<?= $row_data['id_candle'];?>&idOrder=<?= $row_data['id_order_user'];?>&quantity=<?= $row_data['quantity'];?>">-</a> 
+                <?= $row_data['quantity'];?> шт 
+                <a href="../back/plus_quantity.php?idCandle=<?= $row_data['id_candle'];?>&idOrder=<?= $row_data['id_order_user'];?>&quantity=<?= $row_data['quantity'];?>">+</a>
+            </p>
             <p><?= $row_data['quantity * price_size'];?> руб</p>
+            <p><a href="../back/del-candle-from-cart.php?idOrder=<?= $row_data['id_order_user'];?>&idCandle=<?= $row_data['id_candle'];?>">Удалить</a></p>
+           
         <?
         }
             ?>
-            <p>Всего: <?= $cost;?> руб</p>  
+            <p>Всего: <?= $cost;?> руб</p>        
      <?
         }
         $_SESSION['cost_order'] = $cost;
+        if($row > 0){
         ?>
-    </div>
-        <form method="GET" action="../back/add_to_order.php">
-        <input type="submit" name="add-to-order" value="Заказать" id="add-to-order">
-    </form>     
+    <p><a href="../back/add_to_order.php">Заказать</a></p>
+    <p></p>
+    <p></p>
+<p><a href="../back/clear-cart.php?idOrd=<?= $order;?>">Очистить корзину</a></p>  
+<?php
+}
+?>
 
 </div>
 
-
+</div>
 
 </body>
 </html>

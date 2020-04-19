@@ -6,6 +6,11 @@ require_once "../back/connection.php";
 $id_user = $_SESSION['id_user'];
 $queryOrders = "SELECT DISTINCT `id_order_user`, `date`, `cost_order` FROM `cart` WHERE `id_user` = $id_user AND status_order = 'order'";
 $result = mysqli_query($link, $queryOrders);
+$thanks = $_GET['thanks'];
+if($thanks == 1){
+   $message = "Спасибо заказ! Наш менеджер свяжется с вами в течение 5 минут";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +29,8 @@ $result = mysqli_query($link, $queryOrders);
     <a href="cart.php"> Корзина </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
-
 <div class="container">
-    
+ <span><?= $message;?></span>    
     <div class="content">
         <p>Номер заказа</p>
         <p>Дата заказа</p> 
@@ -44,7 +48,7 @@ while ($row_data = mysqli_fetch_assoc($result)) {
 
     </div>
         
-       
+     
 </div>
 
 

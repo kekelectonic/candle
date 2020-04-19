@@ -33,8 +33,8 @@ require_once "../back/connection.php";
         $session = $session_update[0];
         $_SESSION['session'] = $session;
 /////////////////////////////////////////////////////////
-
+$thanks = 1;
 
 mysqli_close($link);
-header('Location: ../view/order.php');
+header('Location: ../view/order.php?thanks='.urlencode($thanks));
 ?>
