@@ -12,6 +12,12 @@ body {
 }
 /* HEADER START */
 
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+
 header {
     
     width: 100%;
@@ -20,7 +26,7 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: 0 auto;
+    margin: 1% auto;
 
     display: flex;
     flex-direction: row;
@@ -96,7 +102,7 @@ header a:hover {
     
   
     text-align: center;
-    
+    overflow-y: scroll;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     

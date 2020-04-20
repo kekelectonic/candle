@@ -9,6 +9,11 @@ body {
     padding: 10px;
     font-family: 'Comic Neue', cursive;
 }
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
 /* HEADER START */
 
 header {
@@ -19,7 +24,7 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: 0 auto;
+    margin: 1% auto;
 
     display: flex;
     flex-direction: row;

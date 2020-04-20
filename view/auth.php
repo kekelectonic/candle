@@ -80,6 +80,9 @@ $resultCart = mysqli_query($link, $queryToCart);
 	<title> Авторизация </title>
 </head>
 <body>
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <main>
   
     <div id="container">

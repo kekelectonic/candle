@@ -46,8 +46,10 @@ if (isset($_POST['reg-button'])) {
   <meta charset="utf-8">
 	<title> Регистрация </title>
 </head>
-
 <body>
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <main>
     <div id="container">
         <h1>Регистрация</h1>

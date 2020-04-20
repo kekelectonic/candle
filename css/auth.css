@@ -11,11 +11,17 @@ body {
     font-family: 'Comic Neue', cursive;
 
 }
+.logo {
+    width: 100%;
+    margin: 2% auto;
+    text-align: center;
+}
+
 main 
 {   
     max-width: 720px;
     
-    margin: 10% auto;
+    margin: 5% auto;
     
 }
 #container

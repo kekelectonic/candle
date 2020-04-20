@@ -23,7 +23,9 @@ $id_user = $_SESSION['id_user'];
     <title>Корзина</title>
 </head>
 <body>
-
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <header>
     <a href="catalogue.php"> Каталог </a>
     <a href="construct.php"> Конструктор </a>

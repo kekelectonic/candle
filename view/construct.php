@@ -15,7 +15,9 @@ require_once "../back/parameters_construct.php";
     <title>Конструктор</title>
 </head>
 <body>
-   
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <header>
     <a href="catalogue.php"> Каталог </a>   
     <a href="cart.php"> Корзина </a>

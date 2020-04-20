@@ -21,7 +21,9 @@ require_once "../back/connection.php";
     <title>Каталог</title>
 </head>
 <body>
-
+    <div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <header>
     
     <a href="construct.php"> Конструктор </a>   

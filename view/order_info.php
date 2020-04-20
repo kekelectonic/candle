@@ -19,7 +19,9 @@ $resultInfoOrder = mysqli_query($link, $queryInfoOrder);
     <title>Информация о заказах</title>
 </head>
 <body>
-
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <header>
     <a href="order.php">Заказы</a>
     <a href="cart.php"> Корзина </a>

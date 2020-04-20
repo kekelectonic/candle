@@ -13,7 +13,11 @@ require_once "../back/connection.php";
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href ="../css/account.css">
 </head>
+
 <body>
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
     <?php
         $id_user = $_SESSION['id_user'];
 

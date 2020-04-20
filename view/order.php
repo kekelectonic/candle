@@ -22,7 +22,9 @@ if($thanks == 1){
     <title>Информация о заказах</title>
 </head>
 <body>
-
+<div class="logo">
+    <img src="../img/logo.png" width= "270px" height= "90px">
+    </div>
 <header>
     <a href="account.php"> Личный кабинет </a>
     <a href="catalogue.php"> Каталог </a>

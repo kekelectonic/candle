@@ -11,8 +11,16 @@ body {
     font-family: 'Comic Neue', cursive;
     font-size: 30px;
     margin: 0 auto;
+
+    
  
 }
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
 /* HEADER START */
 
 header {
@@ -23,7 +31,7 @@ header {
     background: white;
 
     border-radius: 12px;
-    margin: 0 auto;
+    margin: 1% auto;
 
     display: flex;
     flex-direction: row;
