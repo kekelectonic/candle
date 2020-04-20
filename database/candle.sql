@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 20 2020 г., 09:18
+-- Время создания: Апр 20 2020 г., 09:20
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -55,7 +55,8 @@ INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_sme
 (11, 1, 1, 1, 1, 1),
 (12, 1, 4, 5, 3, 1),
 (13, 1, 3, 2, 2, 1),
-(14, 1, 1, 1, 1, 1);
+(14, 1, 1, 1, 1, 1),
+(15, 1, 4, 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -147,9 +148,9 @@ CREATE TABLE `candle_size_price` (
 --
 
 INSERT INTO `candle_size_price` (`id_size_price`, `size_candle`, `price_size`) VALUES
-(1, 'маленькая', 200),
-(2, 'средняя', 500),
-(3, 'большая', 700);
+(1, 'Маленькая', 200),
+(2, 'Средняя', 500),
+(3, 'Большая', 700);
 
 -- --------------------------------------------------------
 
@@ -190,6 +191,13 @@ CREATE TABLE `cart` (
   `status_order` varchar(30) NOT NULL,
   `cost_order` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `cart`
+--
+
+INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`, `cost_order`) VALUES
+(4, 15, 1, 4, '2020-04-20 09:19:44', 100, 'cart', NULL);
 
 -- --------------------------------------------------------
 
@@ -285,7 +293,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT для таблицы `candle_color`
 --
@@ -315,7 +323,7 @@ ALTER TABLE `candle_smell`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
