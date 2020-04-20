@@ -9,7 +9,7 @@ body {
     
     padding: 10px;
     font-family: 'Comic Neue', cursive;
-
+    font-size: 30px;
     margin: 0 auto;
  
 }
@@ -26,12 +26,16 @@ header {
     margin: 0 auto;
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 520px) {
+    body {
+        font-size: 18px;
+    }
     header {
-        flex-flow: row wrap;
+        flex-direction: column ;
+        align-items: center;
     }
     
 }
@@ -39,7 +43,6 @@ header {
 header a {
     width: 50%;
     
-  
     padding: 2% 2%;
 
     text-decoration: none;
@@ -48,7 +51,7 @@ header a {
     align-items: center;
     justify-content: center;
 
-    font-size: 30px;
+    font-size: 1em;
     color: black;
     
     
@@ -127,6 +130,8 @@ header a:hover {
     
 }
 .pic p {
+    width: 80%;
+    height: 80%;
 
     display: flex;
     flex-direction: column;
@@ -136,7 +141,7 @@ header a:hover {
 
     text-align: center;
     color: white; 
-    font-size: .8em;
+    font-size: .5em;
 
     position: relative;
 }
@@ -173,11 +178,13 @@ header a:hover {
     height: 50px;
     width: 50px;
 
-    margin-top: 10%;
+
+    text-align: center;
 
     background-color: transparent ;
     background-size: contain;
     background-image: url("../img/cart.png");
+    background-repeat: no-repeat;
 
     filter: invert(1);
 
