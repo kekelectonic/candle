@@ -32,7 +32,7 @@ $id_user = $_SESSION['id_user'];
 </header>
 
     <nav> 
-        <p><a href="../back/clear-cart.php?idOrd=<?= $order;?>">Очистить корзину</a></p>  
+        <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>  
         
     </nav>
 
@@ -97,9 +97,7 @@ $id_user = $_SESSION['id_user'];
         if($row > 0){
         ?>
 
-<?php
-}
-?>
+
     </div>
 </div>
 
@@ -107,5 +105,8 @@ $id_user = $_SESSION['id_user'];
 <p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
 <p><a href="../back/add_to_order.php" class>Заказать</a></p>
 </footer>
+<?php
+}
+?>
 </body>
 </html>

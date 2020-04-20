@@ -59,7 +59,7 @@ WHERE
                     Размер: <?= $row_data['size_candle']; ?> <br>
                     Цена: <?= $row_data['price_size']; ?> <br>             
                     <a href="../back/add_to_cart.php?candleID=<?= $row_data["id_candle"];?>" class='sbmt'></a>
-                    <span style="font-size: smaller;">Количество товара укажите в Корзине</span>
+                    <!-- <span style="font-size: smaller;">Количество товара укажите в Корзине</span> -->
                 </p>
             </div>
             <?
