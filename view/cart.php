@@ -92,6 +92,7 @@ $id_user = $_SESSION['id_user'];
 
 
     </div>
+
 </div>
 
 <footer>

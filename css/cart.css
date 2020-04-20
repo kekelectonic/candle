@@ -98,12 +98,12 @@ span{
 
     border-radius: 12px;
     background-color: white;
-    
+    overflow-y: scroll; 
   
     text-align: center;
     
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     
 }
 .del:hover {
