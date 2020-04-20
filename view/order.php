@@ -29,9 +29,13 @@ if($thanks == 1){
     <a href="cart.php"> Корзина </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
+
+<div class="message"><span> <?= $message;?> </span></div>
+
 <div class="container">
- <span><?= $message;?></span>    
+   
     <div class="content">
+         
         <p>Номер заказа</p>
         <p>Дата заказа</p> 
         <p>Сумма заказа</p> 

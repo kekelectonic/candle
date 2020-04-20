@@ -61,15 +61,8 @@ $id_user = $_SESSION['id_user'];
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
         if($row <= 0){
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p> В корзине</p>";
-            echo "<p>пока нет</p>";
-            echo "<p>товаров</p>";
+            echo "<span> В корзине пока нет товаров</span>";
+
         }
         else{
         $cost = 0;
