@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2020 г., 18:30
+-- Время создания: Апр 20 2020 г., 09:20
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -51,7 +51,12 @@ INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_sme
 (7, 1, 3, 1, 1, 1),
 (8, 1, 1, 1, 2, 1),
 (9, 1, 1, 1, 3, 1),
-(10, 1, 1, 1, 1, 1);
+(10, 1, 1, 1, 1, 1),
+(11, 1, 1, 1, 1, 1),
+(12, 1, 4, 5, 3, 1),
+(13, 1, 3, 2, 2, 1),
+(14, 1, 1, 1, 1, 1),
+(15, 1, 4, 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -143,9 +148,9 @@ CREATE TABLE `candle_size_price` (
 --
 
 INSERT INTO `candle_size_price` (`id_size_price`, `size_candle`, `price_size`) VALUES
-(1, 'маленькая', 200),
-(2, 'средняя', 500),
-(3, 'большая', 700);
+(1, 'Маленькая', 200),
+(2, 'Средняя', 500),
+(3, 'Большая', 700);
 
 -- --------------------------------------------------------
 
@@ -187,6 +192,13 @@ CREATE TABLE `cart` (
   `cost_order` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `cart`
+--
+
+INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`, `cost_order`) VALUES
+(4, 15, 1, 4, '2020-04-20 09:19:44', 100, 'cart', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -209,8 +221,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 71),
-(5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1);
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 100),
+(5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1),
+(6, 'lil peep', '$2y$10$cRIcOgUQdIrBzuTzQUu22OYKxXhcvkf.vWX2VsKAUzN6EwVwJiC0y', 'lil peep', '88005553535', 'Кладбище', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -280,7 +293,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT для таблицы `candle_color`
 --
@@ -310,12 +323,12 @@ ALTER TABLE `candle_smell`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

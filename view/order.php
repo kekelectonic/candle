@@ -4,7 +4,7 @@ require_once "../back/check_session.php";
 require_once "../back/connection.php";
 
 $id_user = $_SESSION['id_user'];
-$queryOrders = "SELECT DISTINCT `id_order_user`, `date`, `cost_order` FROM `cart` WHERE `id_user` = $id_user AND status_order = 'order'";
+$queryOrders = "SELECT DISTINCT `id_order_user`, `date`, `cost_order` FROM `cart` WHERE `id_user` = $id_user AND status_order = 'order' ORDER BY `cart`.`id_order_user` DESC";
 $result = mysqli_query($link, $queryOrders);
 $thanks = $_GET['thanks'];
 if($thanks == 1){
@@ -31,9 +31,13 @@ if($thanks == 1){
     <a href="cart.php"> Корзина </a>
     <a href="../back/logout.php"> Выйти </a>
 </header>
+
+<div class="message"><?= $message;?></div>
+
 <div class="container">
- <span><?= $message;?></span>    
+   
     <div class="content">
+         
         <p>Номер заказа</p>
         <p>Дата заказа</p> 
         <p>Сумма заказа</p> 

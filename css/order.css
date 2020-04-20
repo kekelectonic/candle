@@ -113,7 +113,8 @@ header a:hover {
 .content a:hover{
    color: rgb(244,128,178);
 }
-span{
-    text-align: center;
-    font-size: 20px;
+div.message{
+    text-align: center; 
+    font-size: 30px;
+    margin: 1% 0%;
 }

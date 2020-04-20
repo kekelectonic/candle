@@ -90,7 +90,12 @@ header a:hover {
 }
 
 /* INFO ABOUT ORDERS START */
-
+span{
+   grid-column-start: 2;
+   grid-column-end: 5;
+   grid-row-start: 2;
+   grid-row-end: 2;
+}
 
 
 .content{
@@ -99,7 +104,7 @@ header a:hover {
 
     border-radius: 12px;
     background-color: white;
-    
+    overflow-y: scroll; 
   
     text-align: center;
     overflow-y: scroll;
@@ -129,7 +134,7 @@ a:hover{
     text-align: center;
 }
 
-.cost span {
+span.cost  {
     color: white;
     font-weight: 800;
 }

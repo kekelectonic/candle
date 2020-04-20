@@ -34,7 +34,7 @@ $id_user = $_SESSION['id_user'];
 </header>
 
     <nav> 
-        <p><a href="../back/clear-cart.php?idOrd=<?= $order;?>">Очистить корзину</a></p>  
+        <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>  
         
     </nav>
 
@@ -63,15 +63,8 @@ $id_user = $_SESSION['id_user'];
         $result = mysqli_query($link, $query_orders);
         $row = mysqli_num_rows($result);
         if($row <= 0){
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p></p>";
-            echo "<p> В корзине</p>";
-            echo "<p>пока нет</p>";
-            echo "<p>товаров</p>";
+            echo "<span> В корзине пока нет товаров</span>";
+
         }
         else{
         $cost = 0;
@@ -96,18 +89,24 @@ $id_user = $_SESSION['id_user'];
      <?
         }
         $_SESSION['cost_order'] = $cost;
-        if($row > 0){
+        
         ?>
 
-<?php
-}
-?>
+
     </div>
+
 </div>
 
 <footer>
+<?php
+if($row > 0){
+?>
 <p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
 <p><a href="../back/add_to_order.php" class>Заказать</a></p>
+<?php
+}
+?>
 </footer>
+
 </body>
 </html>
