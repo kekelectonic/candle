@@ -87,7 +87,7 @@ $id_user = $_SESSION['id_user'];
      <?
         }
         $_SESSION['cost_order'] = $cost;
-        if($row > 0){
+        
         ?>
 
 
@@ -95,11 +95,15 @@ $id_user = $_SESSION['id_user'];
 </div>
 
 <footer>
+<?php
+if($row > 0){
+?>
 <p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
 <p><a href="../back/add_to_order.php" class>Заказать</a></p>
-</footer>
 <?php
 }
 ?>
+</footer>
+
 </body>
 </html>

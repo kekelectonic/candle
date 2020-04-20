@@ -30,7 +30,7 @@ if($thanks == 1){
     <a href="../back/logout.php"> Выйти </a>
 </header>
 
-<div class="message"><span> <?= $message;?> </span></div>
+<div class="message"><?= $message;?></div>
 
 <div class="container">
    
