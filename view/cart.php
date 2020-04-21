@@ -35,7 +35,6 @@ $id_user = $_SESSION['id_user'];
 
     <nav> 
         <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>  
-        
     </nav>
 
 
@@ -94,16 +93,15 @@ $id_user = $_SESSION['id_user'];
 
 
     </div>
-
-</div>
-
-<footer>
-<?php
+    <?php
 if($row > 0){
 ?>
 <p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
-<p><a href="../back/add_to_order.php" class>Заказать</a></p>
-<?php
+</div>
+
+<footer>
+    <a href="../back/add_to_order.php" class>Заказать</a>
+<?php                   
 }
 ?>
 </footer>

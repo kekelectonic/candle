@@ -8,6 +8,7 @@ body {
     background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
     padding: 10px;
     font-family: 'Comic Neue', cursive;
+    font-size: 30px;
 }
 /* HEADER START */
 
@@ -31,10 +32,19 @@ header {
     display: flex;
     flex-direction: row;
 }
-@media screen and (max-width: 550px) {
-    header {
-        flex-flow: row wrap;
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
     }
+    header {
+        flex-direction: column ;
+        align-items: center;
+    }
+
+    .container  {
+        min-width: 350px;
+    }
+    
     
 }
 
@@ -50,7 +60,7 @@ header a   {
     align-items: center;
     justify-content: center;
 
-    font-size: 2em;
+    font-size: 1em;
     color: black;
     
     
@@ -89,7 +99,7 @@ h1{
     
     width: 100%;
     
-    font-size: 1.5em;
+    font-size: .7em;
     text-align: center;
 }
 
@@ -107,7 +117,7 @@ h1{
 
     color: black;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.5em;
 
     
     background-color: rgb(244,128,178); 

@@ -24,44 +24,48 @@ require_once "../back/parameters_construct.php";
     <a href="account.php"> Личный кабинет </a> 
     <a href="../back/logout.php"> Выйти </a>
 </header>
-    <h1>Создайте свечу </h1>
+    
     
 <div class="container"> 
-<form class="content qAndS" method ="GET" action="../back/add_to_cart_from_construct.php">   
-        <div class="content">
-        <p> Выберите цвет:</p>
-                <select class="nav" name="select_color">
-        <?php while ($rowDataColor = mysqli_fetch_assoc($resultColor)) { ?>
-    <option class="<?= $rowDataColor['eng_color'];?>" value="<?= $rowDataColor['id_color_candle'];?>">
-        <?= $rowDataColor['name_color'];?>
-    </option>
-        <?php } ?>
-                </select>
-        </div>
+    <form class="content qAndS" method ="GET" action="../back/add_to_cart_from_construct.php">   
+            <div class="content">
+            <h1>Создайте свечу </h1>
+            <p> Выберите цвет:</p>
+                    <select class="nav" name="select_color">
+            <?php while ($rowDataColor = mysqli_fetch_assoc($resultColor)) { ?>
+        <option class="<?= $rowDataColor['eng_color'];?>" value="<?= $rowDataColor['id_color_candle'];?>">
+            <?= $rowDataColor['name_color'];?>
+        </option>
+            <?php } ?>
+                    </select>
+            </div>
 
-        <div class="content">
-            <p> Выберите запах:</p>
-                    <select class="nav" name="select_smell"> 
-        <?php while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {?>                       
-            <option value="<?= $rowDataSmell['id_smell_candle'];?>">
-                <?= $rowDataSmell['name_smell'];?>
-            </option>
-        <?php } ?>
-                    </select>
-        </div>  
-        
-        <div class="content">        
-            <p> Выберите размер:</p>
-                    <select class="nav" name="select_size">
-        <?php while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) { ?> 
-            <option value="<?= $rowDataSizePrice['id_size_price'];?>">
-                <?= $rowDataSizePrice['size_candle'];?>
-            </option>
-        <?php } ?>
-                    </select>
-        </div> 
-            <button type="submit" class="sbmt"> Добавить в корзину </button>
-        </form>           
-</div>
+            <div class="content">
+                <p> Выберите запах:</p>
+                        <select class="nav" name="select_smell"> 
+            <?php while ($rowDataSmell = mysqli_fetch_assoc($resultSmell)) {?>                       
+                <option value="<?= $rowDataSmell['id_smell_candle'];?>">
+                    <?= $rowDataSmell['name_smell'];?>
+                </option>
+            <?php } ?>
+                        </select>
+            </div>  
+            
+            <div class="content">        
+                <p> Выберите размер:</p>
+                        <select class="nav" name="select_size">
+            <?php while ($rowDataSizePrice = mysqli_fetch_assoc($resultSizePrice)) { ?> 
+                <option value="<?= $rowDataSizePrice['id_size_price'];?>">
+                    <?= $rowDataSizePrice['size_candle'];?>
+                </option>
+            <?php } ?>
+                        </select>
+                    </div>
+            </div> 
+            <div class="to_card">
+                <button type="submit" class="sbmt"> Добавить в корзину </button>
+            </div>
+    </form>           
+
 </body>
 </html>

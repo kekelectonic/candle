@@ -64,21 +64,26 @@ a:hover {
 /* HEADER END */
 
 h1{
-    width: 60%;
-    margin: 1% auto;
+    width: 100%;
+    margin: 2% auto;
     text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    word-spacing: 15px;
+    color: rgba(244,128,178,1);
 }
 
 .container {
     
     width: 30%;
     max-width: 1280px;
-    margin: 2% auto;
+    margin: 0 auto;
+    padding-bottom: 20px;   
     
-    
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     background-color: white;
     
+
 }
 
 /* CONTENT AND SELECT START */
@@ -87,10 +92,16 @@ h1{
 .content{
     
     width: 100%;
+    
     padding: 5px;
     
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
+    
+}
+.content p {
+    font-size: .9em;
+    
 }
 
 .content .nav{
@@ -104,7 +115,6 @@ h1{
     background:  rgb(244,128,178);
 }
 /* COLORS */
-
 
 .red{
     background: red;
@@ -145,18 +155,30 @@ h1{
     flex-direction: column;
     align-items: center;
 }
+.to_card{
+    width: 30%;
+    max-width: 1280px;
+    margin: 0 auto;
 
+    font-size: .7em;
+    text-align: center;   
+
+}
 .sbmt{
-    padding: 10px;
-    margin-top: 10px;
+   
+    width: 100%;
     
-    font-size: 1em;
+    padding: 3%;
+
+    border-radius: 0 0 12px 12px;
+    border: none;
+
+    color: black;
+    text-decoration: none;
+    font-size: 3em;
     font-family: 'Comic Neue', cursive;
 
-    cursor: pointer;
-    
-    border: none;
-    border-radius: 13px;
+    background-color: rgb(244,128,178); 
 }
 .sbmt:hover{
 
