@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 20 2020 г., 09:20
+-- Время создания: Апр 21 2020 г., 17:01
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -48,15 +48,15 @@ INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_sme
 (4, 5, 7, 4, 2, 5),
 (5, 6, 1, 5, 2, 6),
 (6, 7, 6, 6, 2, 7),
-(7, 1, 3, 1, 1, 1),
-(8, 1, 1, 1, 2, 1),
-(9, 1, 1, 1, 3, 1),
-(10, 1, 1, 1, 1, 1),
-(11, 1, 1, 1, 1, 1),
-(12, 1, 4, 5, 3, 1),
-(13, 1, 3, 2, 2, 1),
-(14, 1, 1, 1, 1, 1),
-(15, 1, 4, 3, 2, 1);
+(19, 8, 7, 7, 2, 8),
+(20, 9, 3, 8, 2, 9),
+(21, 10, 7, 9, 2, 10),
+(22, 11, 1, 10, 2, 11),
+(23, 12, 5, 11, 2, 12),
+(24, 13, 2, 12, 2, 13),
+(25, 14, 1, 13, 2, 14),
+(26, 15, 1, 14, 2, 15),
+(27, 16, 3, 15, 2, 16);
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,16 @@ INSERT INTO `candle_image` (`id_image`, `url_image`) VALUES
 (4, '../img/4.jpg'),
 (5, '../img/5.jpg'),
 (6, '../img/6.jpg'),
-(7, '../img/7.jpg');
+(7, '../img/7.jpg'),
+(8, '../img/8.jpg'),
+(9, '../img/9.jpg'),
+(10, '../img/10.jpg'),
+(11, '../img/11.jpg'),
+(12, '../img/12.jpg'),
+(13, '../img/13.jpg'),
+(14, '../img/14.jpg'),
+(15, '../img/15.jpg'),
+(16, '../img/16.jpg');
 
 -- --------------------------------------------------------
 
@@ -129,7 +138,16 @@ INSERT INTO `candle_name` (`id_name_candle`, `name_candle`) VALUES
 (4, 'Сверкающая звезда'),
 (5, 'Рассвет в горах'),
 (6, 'Кленовый чай'),
-(7, 'Уютное шале');
+(7, 'Уютное шале'),
+(8, 'Лавандовый джелато'),
+(9, 'Цветочный мед'),
+(10, 'Цветение вишни'),
+(11, 'Тихий и уютный дом'),
+(12, 'Чистый хлопок'),
+(13, 'Яркий шафран'),
+(14, 'Игристая корица'),
+(15, 'Розовый грейпфрут'),
+(16, 'Цветы на солнце');
 
 -- --------------------------------------------------------
 
@@ -148,9 +166,9 @@ CREATE TABLE `candle_size_price` (
 --
 
 INSERT INTO `candle_size_price` (`id_size_price`, `size_candle`, `price_size`) VALUES
-(1, 'Маленькая', 200),
-(2, 'Средняя', 500),
-(3, 'Большая', 700);
+(1, 'Маленькая', 500),
+(2, 'Средняя', 700),
+(3, 'Большая', 1000);
 
 -- --------------------------------------------------------
 
@@ -173,7 +191,16 @@ INSERT INTO `candle_smell` (`id_smell_candle`, `name_smell`) VALUES
 (3, 'Пачули, Амбра, Сандал'),
 (4, 'Бальзамин, Ваниль, Сосна'),
 (5, 'Корица, Гвоздика, Кардамон'),
-(6, 'Ветивер, Пачули, Амбра');
+(6, 'Ветивер, Пачули, Амбра'),
+(7, 'Ванильное мороженое, Мед, Лаванда'),
+(8, 'Мед, Маракуйя, Цветок нектарина'),
+(9, 'Вишня, Миндаль, Корица'),
+(10, 'Пачули, Сандал, Янтарный мускус'),
+(11, 'Озон, Зеленые листья, Бергамот'),
+(12, 'Бергамот, Анис, Лист корицы'),
+(13, 'Корица, Гвоздика, Кедр'),
+(14, 'Розовый грейпфрут, Цитрусовые ноты'),
+(15, 'Бутоны розы, Лимон, Апельсин');
 
 -- --------------------------------------------------------
 
@@ -191,13 +218,6 @@ CREATE TABLE `cart` (
   `status_order` varchar(30) NOT NULL,
   `cost_order` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `cart`
---
-
-INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`, `cost_order`) VALUES
-(4, 15, 1, 4, '2020-04-20 09:19:44', 100, 'cart', NULL);
 
 -- --------------------------------------------------------
 
@@ -221,7 +241,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 100),
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 105),
 (5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1),
 (6, 'lil peep', '$2y$10$cRIcOgUQdIrBzuTzQUu22OYKxXhcvkf.vWX2VsKAUzN6EwVwJiC0y', 'lil peep', '88005553535', 'Кладбище', 2);
 
@@ -293,7 +313,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT для таблицы `candle_color`
 --
@@ -303,12 +323,12 @@ ALTER TABLE `candle_color`
 -- AUTO_INCREMENT для таблицы `candle_image`
 --
 ALTER TABLE `candle_image`
-  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `candle_name`
 --
 ALTER TABLE `candle_name`
-  MODIFY `id_name_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_name_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `candle_size_price`
 --
@@ -318,12 +338,12 @@ ALTER TABLE `candle_size_price`
 -- AUTO_INCREMENT для таблицы `candle_smell`
 --
 ALTER TABLE `candle_smell`
-  MODIFY `id_smell_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_smell_candle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
