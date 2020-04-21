@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 21 2020 г., 17:01
+-- Время создания: Апр 21 2020 г., 17:12
 -- Версия сервера: 5.7.19-log
 -- Версия PHP: 7.1.7
 
@@ -133,21 +133,21 @@ CREATE TABLE `candle_name` (
 
 INSERT INTO `candle_name` (`id_name_candle`, `name_candle`) VALUES
 (1, 'Пользовательская свеча'),
-(2, 'Заснеженная ель'),
-(3, 'Морозный пряник'),
-(4, 'Сверкающая звезда'),
-(5, 'Рассвет в горах'),
-(6, 'Кленовый чай'),
-(7, 'Уютное шале'),
-(8, 'Лавандовый джелато'),
-(9, 'Цветочный мед'),
-(10, 'Цветение вишни'),
-(11, 'Тихий и уютный дом'),
-(12, 'Чистый хлопок'),
-(13, 'Яркий шафран'),
-(14, 'Игристая корица'),
-(15, 'Розовый грейпфрут'),
-(16, 'Цветы на солнце');
+(2, '\"ЗАСНЕЖЕННАЯ ЕЛЬ\"'),
+(3, '\"МОРОЗНЫЙ ПРЯНИК\"'),
+(4, '\"СВЕРКАЮЩАЯ ЗВЕЗДА\"'),
+(5, '\"РАССВЕТ В ГОРАХ\"'),
+(6, '\"КЛЕНОВЫЙ ЧАЙ\"'),
+(7, '\"УЮТНОЕ ШАЛЕ\"'),
+(8, '\"ЛАВАНДОВЫЙ ДЖЕЛАТО\"'),
+(9, '\"ЦВЕТОЧНЫЙ МЕД\"'),
+(10, '\"ЦВЕТЕНИЕ ВИШНИ\"'),
+(11, '\"ТИХИЙ И УЮТНЫЙ ДОМ\"'),
+(12, '\"ЧИСТЫЙ ХЛОПОК\"'),
+(13, '\"ЯРКИЙ ШАФРАН\"'),
+(14, '\"ИГРИСТАЯ КОРИЦА\"'),
+(15, '\"РОЗОВЫЙ ГРЕЙПФРУТ\"'),
+(16, '\"ЦВЕТЫ НА СОЛНЦЕ\"');
 
 -- --------------------------------------------------------
 
@@ -219,6 +219,13 @@ CREATE TABLE `cart` (
   `cost_order` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `cart`
+--
+
+INSERT INTO `cart` (`id_orders`, `id_candle`, `quantity`, `id_user`, `date`, `id_order_user`, `status_order`, `cost_order`) VALUES
+(11, 1, 1, 4, '2020-04-21 17:05:09', 105, 'order', 700);
+
 -- --------------------------------------------------------
 
 --
@@ -241,7 +248,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `fio`, `phone`, `address`, `session_order`) VALUES
 (3, 'maphioznik', '$2y$10$3PBjoljevQULsppVaxG1qejKG3YLx7Der9caIjMqZdMvg4zHf2h3W', 'Зубенко Михаил Петрович', '88005553535', 'Шумиловский городок', 2),
-(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 105),
+(4, 'admin', '$2y$10$QgS7i9wLEmDCgNcsgqG4/ez/9AU5AkebNUNC3kPOrrn94uAylz1gq', 'Баженов Евгений Батькович', '88005553535', 'Нижнее Бутово', 106),
 (5, 'lil', '$2y$10$AapB4yjtpHt/jZxtafQ3MurfW56If04HVhIHH9/AZM.K2QX1t2/De', 'lilpeep', 'lil', 'Нижнее Бутово', 1),
 (6, 'lil peep', '$2y$10$cRIcOgUQdIrBzuTzQUu22OYKxXhcvkf.vWX2VsKAUzN6EwVwJiC0y', 'lil peep', '88005553535', 'Кладбище', 2);
 
@@ -343,7 +350,7 @@ ALTER TABLE `candle_smell`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_orders` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --

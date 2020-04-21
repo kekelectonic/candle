@@ -56,12 +56,11 @@ WHERE
             <div class='pic' style="background-image: url(<?= $row_data['url_image'];?>);">
                 <p class='descP'>
                     <span><?= $row_data['name_candle'];?></span>
-                    Цвет: <?= $row_data['name_color'];?> <br>
                     Запах: <?=  $row_data['name_smell']; ?> <br>
                     Размер: <?= $row_data['size_candle']; ?> <br>
                     Цена: <?= $row_data['price_size']; ?> <br>             
                     <a href="../back/add_to_cart.php?candleID=<?= $row_data["id_candle"];?>" class='sbmt'></a>
-                    <!-- <span style="font-size: smaller;">Количество товара укажите в Корзине</span> -->
+                    <span style="font-size: smaller;">Количество товара укажите в Корзине</span>
                 </p>
             </div>
             <?
