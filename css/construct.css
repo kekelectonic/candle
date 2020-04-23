@@ -10,6 +10,7 @@ body {
     padding: 10px;
     font-family: 'Comic Neue', cursive;
     
+    font-size: 30px;
     margin: 0 auto;
 }
 
@@ -26,18 +27,17 @@ header {
     max-width: 1280px;
 
     margin: 1% auto;
-    font-size: 30px;
+    padding-bottom: 20px;
+   
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 
-    padding-bottom: 20px;
+    font-size: 1em;   
 }
 header a {
 
-    text-decoration: none;
-
-    font-size: 1em;
+    text-decoration: none;  
     color: black;
     
     
@@ -50,10 +50,29 @@ header a:hover {
 
 
 /* HEADER END */
-@media screen and (max-width: 550px) {
-    header {
-        flex-flow: row wrap;
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
     }
+    header {
+        flex-direction: column ;
+        align-items: center;
+    }
+
+    .container  {
+        min-width: 350px;
+    }
+}
+
+
+.container {
+    width: 30%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 20px;   
+    font-size: 1em;
+    border-radius: 12px 12px 0 0;
+    background-color: white;
     
 }
 
@@ -61,25 +80,12 @@ h1{
     width: 100%;
     margin: 2% auto;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
+    
     letter-spacing: 3px;
     word-spacing: 15px;
     color: rgba(244,128,178,1);
 }
-
-.container {
-    
-    width: 30%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-bottom: 20px;   
-    
-    border-radius: 12px 12px 0 0;
-    background-color: white;
-    
-
-}
-
 /* CONTENT AND SELECT START */
 
 
@@ -89,12 +95,12 @@ h1{
     
     padding: 5px;
     
-    font-size: 1.3em;
+    font-size: 1em;
     text-align: center;
     
 }
 .content p {
-    font-size: .9em;
+    font-size: .8em;
     
 }
 
@@ -174,7 +180,7 @@ select {
 
     color: black;
     text-decoration: none;
-    font-size: 3em;
+    font-size: 1.5em;
     font-family: 'Comic Neue', cursive;
 
     background-color: rgb(244,128,178); 
