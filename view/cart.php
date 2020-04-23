@@ -79,7 +79,7 @@ if($row > 0){ //прячет p, если нет товаров в корзине
         ?>
         	<p><img src="<?= $row_data['url_image'];?>">
         		</p>
-            <p><?= $row_data['name_candle'];?></p>
+            <p><a href="about_candle.php?id=<?= $row_data['id_candle'];?>"><?= $row_data['name_candle'];?></a></p>
             <p><?= $row_data['price_size'];?></p>
             <p>
                 <a href="../back/minus_quantity.php?idCandle=<?= $row_data['id_candle'];?>&idOrder=<?= $row_data['id_order_user'];?>&quantity=<?= $row_data['quantity'];?>">-</a> 

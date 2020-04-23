@@ -122,7 +122,7 @@ header a:hover {
     width: 35px;
 }
 
-.content a{
+.content a.repeat{
 
     display: block;
     padding: 3%;
@@ -137,7 +137,7 @@ header a:hover {
     
     background-color: rgb(244,128,178); 
 }
-.content a:hover{
+.content a.repeat:hover{
     color: white;
     background:  rgba(106,164,232,0.8883928571428571);
 }
@@ -172,4 +172,14 @@ footer a{
 footer a:hover {
     color: white;
     background:  rgba(106,164,232,0.8883928571428571);
+}
+
+
+a.about_candle{
+
+    color: black;
+    text-decoration: none;
+}
+a.about_candle:hover{
+   color: rgb(244,128,178);
 }

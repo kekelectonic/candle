@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(242,147,189);
+    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
+    
+    padding: 10px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+/* HEADER START */
+
+header {
+    
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 1% auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    padding-bottom: 10px;
+}
+
+header a {
+
+    text-decoration: none;
+
+    font-size: 1em;
+    color: black;
+    
+    
+}
+
+header a:hover {
+    
+    color: white;
+  
+}
+/* HEADER END */
+
+@media screen and (max-width: 520px) {
+    body {
+        font-size: 18px;
+    }
+    header {
+        flex-direction: column ;
+        align-items: center;
+    }
+    
+}
+
+/* CONTAINER START */
+
+.container {
+    
+    width: 100%;
+    max-width: 968px;
+    border-radius: 12px;
+    margin: 5% auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    
+    position: relative;
+    
+}
+
+.pic {
+
+    height: 250px;
+    width: 250px;
+    
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px rgba(242,147,189,1) solid;
+    border-radius: 15px;
+    
+    position: relative;
+   
+}
+
+
+    
+}
+.pic p {
+    width: 80%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    opacity: 0;
+
+    text-align: center;
+    color: white; 
+    font-size: .5em;
+
+
+    position: relative;
+}
+
+
+
+.sbmt   {
+    opacity: 0;
+    margin: 0 auto;
+}
+    
+
+/* CONTAINER END */
+
+/* CART STYLE*/
+
+.sbmt   {
+    height: 50px;
+    width: 50px;
+
+
+    text-align: center;
+
+    background-color: transparent ;
+    background-size: contain;
+    background-image: url("../img/cart.png");
+    background-repeat: no-repeat;
+
+    filter: invert(1);
+
+    border: none;
+    outline: none;
+}
+
+
+
