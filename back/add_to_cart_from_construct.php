@@ -8,9 +8,13 @@ $IdSelectColor = $_GET['select_color'];
 $IdSelectSmell = $_GET['select_smell'];
 $IdSelectSize = $_GET['select_size'];
 
-$queryToCandles = "INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_smell_candle`, `id_size_candle`, `id_image`) VALUES (NULL, 1, $IdSelectColor, $IdSelectSmell, $IdSelectSize, 1);";
-$resultToCandles = mysqli_query($link, $queryToCandles);
 
+$queryImg = "SELECT candle_image.id_image FROM candle_color, candle_image WHERE candle_color.id_image = candle_image.id_image AND candle_color.id_color_candle = $IdSelectColor;";
+$resultImg = mysqli_query($link, $queryImg);
+$rowDataImg = mysqli_fetch_assoc($resultImg);
+$id_image = $rowDataImg['id_image'];
+$queryToCandles = "INSERT INTO `candles` (`id_candle`, `id_name_candle`, `id_color_candle`, `id_smell_candle`, `id_size_candle`, `id_image`) VALUES (NULL, 1, $IdSelectColor, $IdSelectSmell, $IdSelectSize, $id_image);";
+$resultToCandles = mysqli_query($link, $queryToCandles);
 /////////ТУТ ЖЕ ВЫБИРАЕМ ЭТУ СВЕЧУ/////////////////////
 $queryLastIdCandle = "SELECT id_candle FROM candles ORDER BY id_candle DESC LIMIT 1";
 $resultLastIdCandle = mysqli_query($link, $queryLastIdCandle);

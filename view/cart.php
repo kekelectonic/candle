@@ -77,7 +77,8 @@ if($row > 0){ //прячет p, если нет товаров в корзине
             $order = $row_data['id_order_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
-        	<p><img src="<?= $row_data['url_image'];?>"></p>
+        	<p><img src="<?= $row_data['url_image'];?>">
+        		</p>
             <p><?= $row_data['name_candle'];?></p>
             <p><?= $row_data['price_size'];?></p>
             <p>

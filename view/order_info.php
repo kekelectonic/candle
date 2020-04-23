@@ -5,7 +5,7 @@ require_once "../back/connection.php";
 $id_order = $_GET['id_order'];
 $id_user = $_SESSION['id_user'];
 $queryInfoOrder = "
-        SELECT name_candle, price_size, quantity, quantity * price_size, status_order, cost_order FROM cart, candles, candle_size_price, candle_name WHERE id_order_user = $id_order AND id_user = $id_user AND status_order = 'order' AND cart.id_candle = candles.id_candle AND candles.id_size_candle = candle_size_price.id_size_price AND candles.id_name_candle = candle_name.id_name_candle";
+        SELECT name_candle, url_image, price_size, quantity, quantity * price_size, status_order, cost_order FROM cart, candles, candle_size_price, candle_name, candle_image WHERE id_order_user = $id_order AND id_user = $id_user AND status_order = 'order' AND cart.id_candle = candles.id_candle AND candles.id_image = candle_image.id_image AND candles.id_size_candle = candle_size_price.id_size_price AND candles.id_name_candle = candle_name.id_name_candle";
 $resultInfoOrder = mysqli_query($link, $queryInfoOrder);
 
 ?>
@@ -32,7 +32,8 @@ $resultInfoOrder = mysqli_query($link, $queryInfoOrder);
 <div class="container">
     
         <div class="content">
-            <p>Товар</p>
+            <p>Фото</p>
+            <p>Название</p>
             <p>Цена за шт</p> 
             <p>Количество</p>
             <p>Сумма</p>
@@ -41,6 +42,7 @@ $cost = 0;
 while ($row_data = mysqli_fetch_assoc($resultInfoOrder)) {
             $cost += $row_data['quantity * price_size'];
 ?>
+            <p><img src="<?= $row_data['url_image'];?>">
             <p><?= $row_data['name_candle'];?></p>
             <p><?= $row_data['price_size'];?> руб</p>
             <p><?= $row_data['quantity'];?> шт</p>
