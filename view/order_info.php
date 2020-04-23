@@ -34,7 +34,7 @@ $resultInfoOrder = mysqli_query($link, $queryInfoOrder);
         <div class="content">
             <p>Фото</p>
             <p>Название</p>
-            <p>Цена за шт</p> 
+            <p>Цена</p> 
             <p>Количество</p>
             <p>Сумма</p>
 <?php

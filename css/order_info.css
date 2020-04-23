@@ -122,25 +122,7 @@ header a:hover {
     width: 35px;
 }
 
-.content a.repeat{
 
-    display: block;
-    padding: 3%;
-
-    border-radius: 0 0 12px 12px;
-    border: none;
-
-    color: black;
-    text-decoration: none;
-    font-size: 1.3em;
-
-    
-    background-color: rgb(244,128,178); 
-}
-.content a.repeat:hover{
-    color: white;
-    background:  rgba(106,164,232,0.8883928571428571);
-}
 .cost {
     font-size: 1em;
     text-align: center;

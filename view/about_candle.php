@@ -15,6 +15,8 @@ $name_candle = $rowData['name_candle'];
 $price_size = $rowData['price_size'];
 $name_smell = $rowData['name_smell'];
 $size_candle = $rowData['size_candle'];
+
+$back = $_SERVER['HTTP_REFERER'];
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +47,10 @@ $size_candle = $rowData['size_candle'];
                 <span><?= $name_candle;?></span> <br>
                     Запах: <?= $name_smell; ?> <br>
                     Размер: <?= $size_candle; ?> <br>
-                    Цена: <?= $price_size; ?> руб <br>             
+                    Цена: <?= $price_size; ?> руб <br>
+                           
             </p>
+            <a href="<?= $back; ?>" class="back">Вернуться</a>
         </div>
 </div>
 

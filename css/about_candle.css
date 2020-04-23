@@ -121,34 +121,17 @@ header a:hover {
 }
 
 
-
-.sbmt   {
-    opacity: 0;
-    margin: 0 auto;
+a.back{
+    background: white;
+    border-radius: 12px;
+    margin: 10% 1%;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 1em;
+    color: black;
 }
+a.back:hover{
+    background:  rgba(106,164,232,0.8883928571428571);
     
-
-/* CONTAINER END */
-
-/* CART STYLE*/
-
-.sbmt   {
-    height: 50px;
-    width: 50px;
-
-
-    text-align: center;
-
-    background-color: transparent ;
-    background-size: contain;
-    background-image: url("../img/cart.png");
-    background-repeat: no-repeat;
-
-    filter: invert(1);
-
-    border: none;
-    outline: none;
+    color: white;
 }
-
-
-
