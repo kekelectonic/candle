@@ -27,13 +27,13 @@ $id_user = $_SESSION['id_user'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/cart.css">
     <title>Корзина</title>
 </head>
 <body>
 <div class="logo">
-    <img src="../img/logo.png" width= "270px" height= "90px">
+        <a href="catalogue.php"><img src="../img/logo.png" width= "250px" height= "110px"></a>
     </div>
 <header>
     <a href="catalogue.php"> Каталог </a>
@@ -70,6 +70,12 @@ if($row > 0){ //прячет p, если нет товаров в корзине
         // $row = mysqli_num_rows($result);
         if($row <= 0){
             echo "<span> В корзине пока нет товаров</span>";
+            echo "<script>
+                document.querySelector('.container').style.borderRadius = '12px'
+                document.querySelector('.container').style.display = 'flex' 
+                document.querySelector('.container').style.justifyContent = 'center' 
+                document.querySelector('.container').style.alignItems = 'center' 
+            </script>";
         }
         else{
         $cost = 0;

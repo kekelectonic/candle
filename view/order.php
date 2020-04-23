@@ -17,13 +17,13 @@ if($thanks == 1){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/order.css">
     <title>Информация о заказах</title>
 </head>
 <body>
 <div class="logo">
-    <img src="../img/logo.png" width= "270px" height= "90px">
+        <a href="catalogue.php"><img src="../img/logo.png" width= "250px" height= "110px"></a>
     </div>
 <header>
     <a href="account.php"> Личный кабинет </a>

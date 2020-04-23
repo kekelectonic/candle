@@ -9,13 +9,12 @@ html, body
     margin: 0 auto;
 }
 body {
-    background: rgb(242,147,189);
-    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
-    
+    background: rgb(208, 206, 233);
     padding: 10px;
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 30px;
     margin: 0 auto;
+    
 }
 
 .logo {
@@ -40,12 +39,13 @@ header {
 }
 
 header a {
+    transition: .2s linear;
+
     text-decoration: none;
-
     font-size: 1em;
-    color: black;  
+    color: black;
+    
 }
-
 header a:hover {
     
     color: white;
@@ -111,20 +111,22 @@ header a:hover {
 }
 
 .cont {
-    margin: 14% auto;
+    margin: 11% auto;
 }
 .cont a{
     background: white;
     border-radius: 12px;
     border: 1px rgba(242,147,189,1) solid;
 
-    padding: 5px;
+    padding: 3%;
     text-decoration: none;
     font-size: 1em;
     color: black;
+
+    transition: all .2s;
 }
 .cont a:hover{
     background:  rgba(106,164,232,0.8883928571428571);
-    border: 1px white solid;
+    border: 1px solid transparent;
     color: white;
 }

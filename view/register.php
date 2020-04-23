@@ -40,15 +40,16 @@ if (isset($_POST['reg-button'])) {
 
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="stylesheet" type="text/css" href="../css/auth.css">
-  <meta charset="utf-8">
+<html lang="en">
+    <meta charset="utf-8">
 	<title> Регистрация </title>
+    <link rel="stylesheet" type="text/css" href="../css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="logo">
-    <img src="../img/logo.png" width= "270px" height= "90px">
+        <img src="../img/logo.png" width= "250px" height= "110px">
     </div>
 <main>
     <div id="container">

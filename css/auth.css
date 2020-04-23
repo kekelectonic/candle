@@ -5,13 +5,11 @@
     box-sizing: border-box;
 }
 body {
-    background: rgb(242,147,189);
-    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
+    background: rgb(208, 206, 233);
     padding: 10px;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0 auto;
     
-    font-family: 'Comic Neue', cursive;
-
 }
 .logo {
     width: 100%;
@@ -42,6 +40,7 @@ main
     font-size: 22px;
     border-radius: 10px;
     transition: 0.3s;
+    background-color: rgba(244, 128, 178, 0.6); 
 }
 .add:hover  
 {
@@ -74,9 +73,11 @@ a, p.reg
     color: black;
     text-decoration: none;
     font-size: 30px;
+    
+
 }    
 a:hover
 {   
     transition: 0.3s;
-    color: rgba(106,164,232,0.8883928571428571);
+    color: white;
 }

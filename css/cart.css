@@ -9,14 +9,11 @@ html, body
     margin: 0 auto;
 }
 body {
-    background: rgb(242,147,189);
-    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
-    
+    background: rgb(208, 206, 233);
     padding: 10px;
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 30px;
     margin: 0 auto;
-
     
 }
 
@@ -41,12 +38,11 @@ header {
     padding-bottom: 10px;
 }
 header a {
+    transition: .2s linear;
 
     text-decoration: none;
-
     font-size: 1em;
     color: black;
-    
     
 }
 
@@ -123,10 +119,12 @@ span{
 .content p {
     margin: 2%;
     font-size: .7em;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
-
 .content img{
-    width: 35px;
+    width: 90px;
 }
 a{
 
@@ -149,7 +147,7 @@ nav {
 
     margin: 2% auto;
 
-    text-align: center;
+    text-align: right;
 }
 
 nav a {
@@ -160,15 +158,15 @@ nav a {
     padding: 1%;
     
     text-decoration: none;
-    font-size: 1em;
+    font-size: .6em;
     color: black;
+    transition: all .2s;
 }
 
 nav a:hover{
     background:  rgba(106,164,232,0.8883928571428571);
     
     color: white;
-
 }
 footer{
     width: 60%;
@@ -190,7 +188,10 @@ footer a{
 
     text-align: center;
 
-    background-color: rgb(244,128,178); 
+    background-color: rgba(244, 128, 178, 0.6); 
+
+    transition: all .2s;
+
     
 }
 footer a:hover {

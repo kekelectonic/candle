@@ -74,14 +74,16 @@ $resultCart = mysqli_query($link, $queryToCart);
 
 <!DOCTYPE html>
 <html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../css/auth.css">
   <meta charset="utf-8">
-	<title> Авторизация </title>
+  <title> Авторизация </title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/auth.css">
 </head>
 <body>
 <div class="logo">
-    <img src="../img/logo.png" width= "270px" height= "90px">
+        <img src="../img/logo.png" width= "250px" height= "110px">
     </div>
 <main>
   

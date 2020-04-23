@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 html, body
 {
@@ -9,13 +10,12 @@ html, body
     margin: 0 auto;
 }
 body {
-    background: rgb(242,147,189);
-    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
-    
+    background: rgb(208, 206, 233);
     padding: 10px;
-    font-family: 'Comic Neue', cursive;
-    margin: 0 auto;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 30px;
+    margin: 0 auto;
+    
 }
 
 .logo {
@@ -38,15 +38,13 @@ header {
     padding-bottom: 10px;
 }
 header a {
+    transition: .2s linear;
 
     text-decoration: none;
-
     font-size: 1em;
     color: black;
     
-    
 }
-
 header a:hover {
     color: white;
     
@@ -112,16 +110,17 @@ header a:hover {
 
 .content p {
     margin: 1%;
+    font-size: .9em;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
 
 
 .content a{
-
     color: black;
     text-decoration: none;
- 
-
-     
+    transition: all .2s;   
 }
 .content a:hover{
    color: rgb(244,128,178);
@@ -129,5 +128,5 @@ header a:hover {
 div.message{
     text-align: center; 
     font-size: 1.3em;
-    margin: 1% 0%;
+    margin: 1% auto;
 }

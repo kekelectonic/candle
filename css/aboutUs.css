@@ -9,14 +9,12 @@ html, body
     margin: 0 auto;
 }
 body {
-    background: rgb(242,147,189);
-    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
-    
+    background: rgb(208, 206, 233);
     padding: 10px;
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 30px;
     margin: 0 auto;
-
+    
 }
 
 .logo {
@@ -40,12 +38,11 @@ header {
     padding-bottom: 10px;
 }
 header a {
+    transition: .2s linear;
 
     text-decoration: none;
-
     font-size: 1em;
     color: black;
-    
     
 }
 
