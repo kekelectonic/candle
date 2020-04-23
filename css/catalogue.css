@@ -5,7 +5,8 @@
 }
 html, body
 {
-min-width: 375px;
+    min-width: 375px;
+    margin: 0 auto;
 }
 body {
     background: rgb(242,147,189);
@@ -57,11 +58,14 @@ header a:hover {
 
 @media screen and (max-width: 768px) {
     body {
-        font-size: 18px;
+        font-size: 20px;
     }
     header {
         flex-direction: column ;
         align-items: center;
+    }
+    .container { 
+        max-width: 350px;
     }
     div.pic{
         height: 150px;
@@ -75,13 +79,13 @@ header a:hover {
 .container {
     
     width: 100%;
-    max-width: 968px;
+    max-width: 1150px;
     
 
     border-radius: 12px;
 
 
-    margin: 2% auto;
+    margin: 1% auto;
 
     display: flex;
     flex-flow: row wrap;

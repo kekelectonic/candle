@@ -28,7 +28,8 @@ require_once "../back/connection.php";
     
     <a href="construct.php"> Конструктор </a>   
     <a href="cart.php"> Корзина </a>
-    <a href="account.php"> Личный кабинет </a>   
+    <a href="account.php"> Личный кабинет </a>
+    <a href="aboutUs.php"> О нас </a> 
     <a href="../back/logout.php"> Выйти </a>
 
 
