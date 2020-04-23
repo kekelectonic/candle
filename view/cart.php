@@ -12,14 +12,14 @@ $id_user = $_SESSION['id_user'];
     $sess = $session_data[0];
     $id_order_user = $sess;
    	$query_orders = "
-        SELECT cart.id_candle, id_order_user, name_candle, quantity, price_size, quantity * price_size, status_order 
-        FROM cart, candles, candle_size_price, candle_name 
+        SELECT cart.id_candle, id_order_user, url_image, name_candle, quantity, price_size, quantity * price_size, status_order 
+        FROM cart, candles, candle_size_price, candle_image, candle_name 
         WHERE id_order_user = $id_order_user 
         AND id_user = $id_user AND status_order = 'cart' 
         AND cart.id_candle = candles.id_candle 
-        AND candles.id_size_candle = candle_size_price.id_size_price 
+        AND candles.id_size_candle = candle_size_price.id_size_price
+		AND candles.id_image = candle_image.id_image       
         AND candles.id_name_candle = candle_name.id_name_candle;";
-
         $result = mysqli_query($link, $query_orders);
 ?>
 <!DOCTYPE html>
@@ -58,8 +58,9 @@ if($row > 0){  //прячет кнопку, если нет товаров в к
 <?php
 if($row > 0){ //прячет p, если нет товаров в корзине
 ?>
-            <p>Товар</p>
-            <p>Цена за шт</p> 
+			<p>Фото</p>
+            <p>Название</p>
+            <p>Цена</p> 
             <p>Количество</p>
             <p>Сумма</p>
             <p>Действие</p>
@@ -76,6 +77,7 @@ if($row > 0){ //прячет p, если нет товаров в корзине
             $order = $row_data['id_order_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
+        	<p><img src="<?= $row_data['url_image'];?>"></p>
             <p><?= $row_data['name_candle'];?></p>
             <p><?= $row_data['price_size'];?></p>
             <p>
