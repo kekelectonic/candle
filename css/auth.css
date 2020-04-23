@@ -5,15 +5,16 @@
     box-sizing: border-box;
 }
 body {
-    background: rgb(244,128,178);
-    background: radial-gradient(circle, rgba(244,128,178,1) 0%, rgba(106,164,232,0.8883928571428571) 100%);
+    background: rgb(242,147,189);
+    background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
+    padding: 10px;
+    margin: 0 auto;
     
     font-family: 'Comic Neue', cursive;
 
 }
 .logo {
     width: 100%;
-    margin: 2% auto;
     text-align: center;
 }
 
