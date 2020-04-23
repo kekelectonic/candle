@@ -42,21 +42,20 @@ $back = $_SERVER['HTTP_REFERER'];
 <div class="container">
         <div class='pic' style="background-image: url(<?= $url_image;?>);">
         </div>
-        <div class="description">
-            <p class='descP'>
-                <span><?= $name_candle;?></span> <br>
-                    Запах: <?= $name_smell; ?> <br>
-                    Размер: <?= $size_candle; ?> <br>
-                    Цена: <?= $price_size; ?> руб <br>
-                           
-            </p>
-            <a href="<?= $back; ?>" class="back">Вернуться</a>
+        <div class="content">
+            
+               <p><span><?= $name_candle;?></span> </p>
+               <p>Запах: <?= $name_smell; ?> </p>
+               <p>Размер: <?= $size_candle; ?> </p>
+               <p>Цена: <?= $price_size; ?> руб </p> 
+
+        <div class="cont">  
+            <a href="<?= $back; ?>">Вернуться</a>
         </div>
+
+    </div>
 </div>
 
-<footer>
-<!--     <a href="../back/add_to_cart.php" class>Добавить в корзину</a>
- --></footer>
 
 </body>
 </html>

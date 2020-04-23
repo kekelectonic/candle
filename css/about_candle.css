@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body
+{
+min-width: 375px;
+}
 body {
     background: rgb(242,147,189);
     background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
@@ -35,13 +39,10 @@ header {
 }
 
 header a {
-
     text-decoration: none;
 
     font-size: 1em;
-    color: black;
-    
-    
+    color: black;  
 }
 
 header a:hover {
@@ -51,7 +52,7 @@ header a:hover {
 }
 /* HEADER END */
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
     body {
         font-size: 18px;
     }
@@ -59,7 +60,22 @@ header a:hover {
         flex-direction: column ;
         align-items: center;
     }
+    div.pic{
+        height: 150px;
+        width: 150px;
+    }
     
+}
+@media screen and (max-width: 400px){
+    body {
+        font-size: 17px;
+    }
+    .container {
+        text-align: center;
+    }
+    .content {
+        margin: 5% auto;
+    }
 }
 
 /* CONTAINER START */
@@ -67,15 +83,16 @@ header a:hover {
 .container {
     
     width: 100%;
-    max-width: 968px;
-    border-radius: 12px;
+    max-width: 968px;  
     margin: 5% auto;
+    
+    border-radius: 12px;
+    
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     
-    position: relative;
-    
+    font-size: .9em;
 }
 
 .pic {
@@ -87,51 +104,26 @@ header a:hover {
     background-position: center center;
     background-repeat: no-repeat;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
     border: 1px rgba(242,147,189,1) solid;
     border-radius: 15px;
     
-    position: relative;
-   
 }
 
-
-    
+.cont {
+    margin: 14% auto;
 }
-.pic p {
-    width: 80%;
-    height: 80%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    opacity: 0;
-
-    text-align: center;
-    color: white; 
-    font-size: .5em;
-
-
-    position: relative;
-}
-
-
-a.back{
+.cont a{
     background: white;
     border-radius: 12px;
-    margin: 10% 1%;
-    padding: 1%;
+    border: 1px rgba(242,147,189,1) solid;
+
+    padding: 5px;
     text-decoration: none;
     font-size: 1em;
     color: black;
 }
-a.back:hover{
+.cont a:hover{
     background:  rgba(106,164,232,0.8883928571428571);
-    
+    border: 1px white solid;
     color: white;
 }
