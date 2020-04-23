@@ -45,7 +45,7 @@ $id_user = $_SESSION['id_user'];
     <nav>
 <?php
 $row = mysqli_num_rows($result);
-if($row > 0){
+if($row > 0){  //прячет кнопку, если нет товаров в корзине
 ?>
         <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>
 <?php
@@ -55,6 +55,9 @@ if($row > 0){
 
 <div class="container">
     <div class="content">
+<?php
+if($row > 0){ //прячет p, если нет товаров в корзине
+?>
             <p>Товар</p>
             <p>Цена за шт</p> 
             <p>Количество</p>
@@ -62,6 +65,7 @@ if($row > 0){
             <p>Действие</p>
 
     <?php
+}
         // $row = mysqli_num_rows($result);
         if($row <= 0){
             echo "<span> В корзине пока нет товаров</span>";
