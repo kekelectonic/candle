@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body
+{
+min-width: 375px;
+}
 body {
     background: rgb(242,147,189);
     background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
@@ -11,6 +15,7 @@ body {
     font-family: 'Comic Neue', cursive;
     font-size: 30px;
     margin: 0 auto;
+
 }
 
 .logo {
@@ -61,11 +66,14 @@ header a:hover {
     }
 
     .container  {
-        min-width: 350px;
+        min-width: 300px;
     }
-    
-    
 }
+@media screen and (max-width: 1028px){
+    body {
+        font-size: 15px;
+    }
+} 
 
 h1{
     width: 60%;

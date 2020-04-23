@@ -104,7 +104,7 @@ if($row > 0){ //прячет p, если нет товаров в корзине
     <?php
 if($row > 0){
 ?>
-<p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
+<p class="cost">Итого: <?= $cost;?> руб </p>
 </div>
 
 <footer>

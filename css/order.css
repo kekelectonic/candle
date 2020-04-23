@@ -3,14 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body
+{
+min-width: 375px;
+}
 body {
     background: rgb(242,147,189);
     background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
     
     padding: 10px;
     font-family: 'Comic Neue', cursive;
-    
     margin: 0 auto;
+    font-size: 30px;
 }
 
 .logo {
@@ -30,7 +34,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 30px;
     padding-bottom: 10px;
 }
 header a {
@@ -50,15 +53,29 @@ header a:hover {
 
 
 /* HEADER END */
-@media screen and (max-width: 550px) {
-    header {
-        flex-flow: row wrap;
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
     }
-    
+    header {
+        flex-direction: column ;
+        align-items: center;
+    }
+
+    .container {
+        min-width: 350px;
+    }
+
 }
+@media screen and (max-width: 1028px){
+    body {
+        font-size: 15px;
+    }
+} 
+
 
 .container {
-    height: 500px;
+    min-height: 400px;
     width: 50%;
     max-width: 1280px;
     margin: 2% auto;
@@ -84,7 +101,7 @@ header a:hover {
     border-radius: 12px;
     background-color: white;
     
-    font-size: 1.5em;
+    font-size: .9em;
     text-align: center;
     
     display: grid;
@@ -93,7 +110,7 @@ header a:hover {
 }
 
 .content p {
-    margin: 2%;
+    margin: 1%;
 }
 
 
@@ -110,6 +127,6 @@ header a:hover {
 }
 div.message{
     text-align: center; 
-    font-size: 30px;
+    font-size: 1.3em;
     margin: 1% 0%;
 }

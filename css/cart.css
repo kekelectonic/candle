@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body
+{
+min-width: 375px;
+}
 body {
     background: rgb(242,147,189);
     background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
@@ -11,6 +15,8 @@ body {
     font-family: 'Comic Neue', cursive;
     font-size: 30px;
     margin: 0 auto;
+
+    
 }
 
 .logo {
@@ -59,12 +65,17 @@ header a:hover {
         align-items: center;
     }
 
-    .container  {
+    .container, footer {
         min-width: 350px;
     }
-    
-    
+
 }
+@media screen and (max-width: 1028px){
+    body {
+        font-size: 15px;
+    }
+} 
+
 .container {
     min-height: 400px;
     width: 60%;
@@ -130,22 +141,14 @@ a:hover{
     text-align: center;
 }
 
-span.cost  {
-    color: white;
-    font-weight: 800;
-}
-
-
 nav {
 
-    width: 50%;
+    width: 60%;
     max-width: 1280px;
 
     margin: 2% auto;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    text-align: center;
 }
 
 nav a {
@@ -153,7 +156,7 @@ nav a {
     background: white;
     border-radius: 12px;
 
-    padding: 10px;
+    padding: 1%;
     
     text-decoration: none;
     font-size: 1em;

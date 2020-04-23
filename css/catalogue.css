@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body
+{
+min-width: 375px;
+}
 body {
     background: rgb(242,147,189);
     background: linear-gradient(90deg, rgba(242,147,189,1) 0%, rgba(116,169,232,1) 100%);
@@ -51,7 +55,7 @@ header a:hover {
 }
 /* HEADER END */
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
     body {
         font-size: 18px;
     }
@@ -59,8 +63,12 @@ header a:hover {
         flex-direction: column ;
         align-items: center;
     }
-    
+    div.pic{
+        height: 150px;
+        width: 150px;
+    }
 }
+
 
 /* CONTAINER START */
 
@@ -115,7 +123,7 @@ header a:hover {
     position: absolute;
     left: 5%;
     top: 4.99%;
-
+    border-radius: 15px;
     background-color: rgba(0, 0, 0, 0 );
     
     z-index: 2;

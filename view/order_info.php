@@ -50,14 +50,14 @@ while ($row_data = mysqli_fetch_assoc($resultInfoOrder)) {
 <?php
 }
 ?>
-
-<p>Всего: <?=$cost;?> руб</p>
-        </div>
-        <div class="content">
-            <a href="../back/repeat_order.php?id_order=<?=$id_order;?>">Повторить заказ</a>
-        </div>
-       
 </div>
+<p class="cost">Итого:<span> <?= $cost;?></span> руб </p>
+</div>        
+        <footer>
+            <a href="../back/repeat_order.php?id_order=<?=$id_order;?>">Повторить заказ</a>
+    </footer>
+       
+
 
 
 

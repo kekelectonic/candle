@@ -59,20 +59,24 @@ header a:hover {
         align-items: center;
     }
 
-    .container  {
+    .container, footer {
         min-width: 350px;
     }
-    
-    
+
 }
+@media screen and (max-width: 1028px){
+    body {
+        font-size: 15px;
+    }
+} 
 
 .container {
     min-height: 400px;
-    width: 50%;
+    width: 60%;
     max-width: 1280px;
-    margin: 2% auto;
+    margin: 2% auto 0;
     
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     background-color: white;
 
     display: flex;
@@ -87,15 +91,12 @@ header a:hover {
 .content{
     
     width: 100%;
-    
+    padding: 10px;
     background-color: white;
     border-radius: 12px;
 
     font-size: .7em;
     text-align: center;
-
-    
-
 }
 .content:first-child{
     
@@ -119,8 +120,6 @@ header a:hover {
 
 .content a{
 
-    
-
     display: block;
     padding: 3%;
 
@@ -135,6 +134,38 @@ header a:hover {
     background-color: rgb(244,128,178); 
 }
 .content a:hover{
+    color: white;
+    background:  rgba(106,164,232,0.8883928571428571);
+}
+.cost {
+    font-size: 1em;
+    text-align: center;
+    
+}
+footer{
+    width: 60%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+}
+
+footer a{
+    display: block;
+    padding: 3%;
+
+    border-radius: 0 0 12px 12px;
+    border: none;
+
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+
+    text-align: center;
+
+    background-color: rgb(244,128,178); 
+    
+}
+footer a:hover {
     color: white;
     background:  rgba(106,164,232,0.8883928571428571);
 }
