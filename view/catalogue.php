@@ -34,7 +34,7 @@ require_once "../back/connection.php";
 
 </header> 
 <div class="container">
-  
+
     <?php
         $query = "
 SELECT id_candle, name_candle, name_color, name_smell, size_candle, price_size, url_image

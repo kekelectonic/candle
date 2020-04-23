@@ -11,7 +11,16 @@ $id_user = $_SESSION['id_user'];
     $session_data = mysqli_fetch_row($result_session);
     $sess = $session_data[0];
     $id_order_user = $sess;
-
+   	$query_orders = "
+        SELECT cart.id_candle, id_order_user, url_image, name_candle, quantity, price_size, quantity * price_size, status_order 
+        FROM cart, candles, candle_size_price, candle_image, candle_name 
+        WHERE id_order_user = $id_order_user 
+        AND id_user = $id_user AND status_order = 'cart' 
+        AND cart.id_candle = candles.id_candle 
+        AND candles.id_size_candle = candle_size_price.id_size_price
+		AND candles.id_image = candle_image.id_image       
+        AND candles.id_name_candle = candle_name.id_name_candle;";
+        $result = mysqli_query($link, $query_orders);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,37 +42,34 @@ $id_user = $_SESSION['id_user'];
     <a href="../back/logout.php"> Выйти </a>
 </header>
 
-    <nav> 
-        <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>  
+    <nav>
+<?php
+$row = mysqli_num_rows($result);
+if($row > 0){  //прячет кнопку, если нет товаров в корзине
+?>
+        <p><a href="../back/clear-cart.php?idOrd=<?= $id_order_user;?>">Очистить корзину</a></p>
+<?php
+}
+?>
     </nav>
 
-
-
 <div class="container">
-
-
     <div class="content">
-            <p>Товар</p>
-            <p>Цена за шт</p> 
+<?php
+if($row > 0){ //прячет p, если нет товаров в корзине
+?>
+			<p>Фото</p>
+            <p>Название</p>
+            <p>Цена</p> 
             <p>Количество</p>
             <p>Сумма</p>
             <p>Действие</p>
 
     <?php
-        $query_orders = "
-        SELECT cart.id_candle, id_order_user, name_candle, quantity, price_size, quantity * price_size, status_order 
-        FROM cart, candles, candle_size_price, candle_name 
-        WHERE id_order_user = $id_order_user 
-        AND id_user = $id_user AND status_order = 'cart' 
-        AND cart.id_candle = candles.id_candle 
-        AND candles.id_size_candle = candle_size_price.id_size_price 
-        AND candles.id_name_candle = candle_name.id_name_candle;";
-
-        $result = mysqli_query($link, $query_orders);
-        $row = mysqli_num_rows($result);
+}
+        // $row = mysqli_num_rows($result);
         if($row <= 0){
             echo "<span> В корзине пока нет товаров</span>";
-
         }
         else{
         $cost = 0;
@@ -71,6 +77,7 @@ $id_user = $_SESSION['id_user'];
             $order = $row_data['id_order_user'];
             $cost += $row_data['quantity * price_size']; 
         ?>
+        	<p><img src="<?= $row_data['url_image'];?>"></p>
             <p><?= $row_data['name_candle'];?></p>
             <p><?= $row_data['price_size'];?></p>
             <p>

@@ -174,7 +174,7 @@ select {
     width: 100%;
     
     padding: 3%;
-
+    cursor: pointer;
     border-radius: 0 0 12px 12px;
     border: none;
 
